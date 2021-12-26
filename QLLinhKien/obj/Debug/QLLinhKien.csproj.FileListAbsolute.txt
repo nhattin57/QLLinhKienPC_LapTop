@@ -1,0 +1,13 @@
+E:\project_QLLK\QLLinhKien\QLLinhKien\bin\Debug\QLLinhKien.exe.config
+E:\project_QLLK\QLLinhKien\QLLinhKien\bin\Debug\QLLinhKien.exe
+E:\project_QLLK\QLLinhKien\QLLinhKien\bin\Debug\QLLinhKien.pdb
+E:\project_QLLK\QLLinhKien\QLLinhKien\obj\Debug\QLLinhKien.csproj.AssemblyReference.cache
+E:\project_QLLK\QLLinhKien\QLLinhKien\obj\Debug\QLLinhKien.frmDamgNhap.resources
+E:\project_QLLK\QLLinhKien\QLLinhKien\obj\Debug\QLLinhKien.frmLinhKien.resources
+E:\project_QLLK\QLLinhKien\QLLinhKien\obj\Debug\QLLinhKien.Properties.Resources.resources
+E:\project_QLLK\QLLinhKien\QLLinhKien\obj\Debug\QLLinhKien.csproj.GenerateResource.cache
+E:\project_QLLK\QLLinhKien\QLLinhKien\obj\Debug\QLLinhKien.csproj.CoreCompileInputs.cache
+E:\project_QLLK\QLLinhKien\QLLinhKien\obj\Debug\QLLinhKien.exe
+E:\project_QLLK\QLLinhKien\QLLinhKien\obj\Debug\QLLinhKien.pdb
+E:\project_QLLK\QLLinhKien\QLLinhKien\obj\Debug\QLLinhKien.frmQLHoaDon.resources
+E:\project_QLLK\QLLinhKien\QLLinhKien\obj\Debug\QLLinhKien.frmBanHang.resources
