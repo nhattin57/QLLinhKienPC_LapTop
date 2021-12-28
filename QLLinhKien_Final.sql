@@ -47,10 +47,7 @@ PRIMARY KEY(MANV)
 
 GO
 --
-select MaHoaDon,b.Hoten,c.HoTen,NgayXuatHoaDon,Tongtien
-from HOADON a,KHACHHANG b, NHANVIEN c
-where a.MaKhachHang=b.MaKhachHang and a.MANV=c.MANV
-select * from HOADON
+
 CREATE TABLE HOADON(
 MaHoaDon char(10) ,
 MaKhachHang int ,
@@ -105,25 +102,24 @@ ThanhTien bigint,
 PRIMARY KEY(MaPNH,MaLinhKien)
 )
 --tao khoa ngoai
-Alter table LinhKien add  foreign key(MaNCC) references NHACUNGCAP (MaNCC)on update cascade on delete cascade
+Alter table LinhKien add  foreign key(MaNCC) references NHACUNGCAP (MaNCC)on update no action on delete no action
 
-Alter table PhieuNhapHang add  foreign key(MaNCC) references NHACUNGCAP (MaNCC)on update cascade on delete cascade
+Alter table PhieuNhapHang add  foreign key(MaNCC) references NHACUNGCAP (MaNCC)on update no action on delete no action
 
-Alter table PhieuNhapHang add  foreign key(MANV) references NHANVIEN (MANV) on update cascade on delete cascade
+Alter table PhieuNhapHang add  foreign key(MANV) references NHANVIEN (MANV)on update no action on delete no action
+Alter table CTPNH add  foreign key(MAPNH) references PhieuNhapHang(MAPNH)on update no action on delete no action
 
-Alter table CTPNH add  foreign key(MAPNH) references PhieuNhapHang(MAPNH) on update cascade on delete cascade
+Alter table CTPNH add  foreign key(MaLinhKien) references LinhKien(MaLinhKien)on update no action on delete no action
 
-Alter table CTPNH add  foreign key(MaLinhKien) references LinhKien(MaLinhKien) on update NO ACTION on delete NO ACTION
+Alter table NHANVIEN add  foreign key(MaChucVu) references CHUCVU(MaChucVu)on update no action on delete no action
 
-Alter table NHANVIEN add  foreign key(MaChucVu) references CHUCVU(MaChucVu) on update cascade on delete cascade
+Alter table HOADON add  foreign key(MaKhachHang) references KHACHHANG(MaKhachHang)on update no action on delete no action
 
-Alter table HOADON add  foreign key(MaKhachHang) references KHACHHANG(MaKhachHang) on update cascade on delete cascade
+Alter table HOADON add  foreign key(MANV) references NHANVIEN(MANV) on update no action on delete no action
 
-Alter table HOADON add  foreign key(MANV) references NHANVIEN(MANV) on update cascade on delete cascade
+Alter table CTHD add  foreign key(MaHoaDon) references HOADON(MaHoaDon) on update no action on delete no action
 
-Alter table CTHD add  foreign key(MaHoaDon) references HOADON(MaHoaDon) on update cascade on delete cascade
-
-Alter table CTHD add  foreign key(MaLinhKien) references LinhKien(MaLinhKien) on update cascade on delete cascade
+Alter table CTHD add  foreign key(MaLinhKien) references LinhKien(MaLinhKien)on update no action on delete no action
 
 --nhap du lieu
 insert into CHUCVU values('NV',N'Nhân Viên')

@@ -30,7 +30,8 @@ namespace QLLinhKien
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboLoaiLK = new System.Windows.Forms.ComboBox();
+            this.txtLoaiLK = new System.Windows.Forms.TextBox();
+            this.cboTenNCC = new System.Windows.Forms.ComboBox();
             this.txtBaoHanh = new System.Windows.Forms.TextBox();
             this.txtSLTon = new System.Windows.Forms.TextBox();
             this.txtTenLK = new System.Windows.Forms.TextBox();
@@ -39,6 +40,8 @@ namespace QLLinhKien
             this.txtMaLK = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,9 +49,6 @@ namespace QLLinhKien
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTimKiemLK = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cboTenNCC = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lsvLinhKien = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -64,7 +64,7 @@ namespace QLLinhKien
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnKoLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.btnDong = new System.Windows.Forms.Button();
@@ -76,8 +76,8 @@ namespace QLLinhKien
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtLoaiLK);
             this.groupBox1.Controls.Add(this.cboTenNCC);
-            this.groupBox1.Controls.Add(this.cboLoaiLK);
             this.groupBox1.Controls.Add(this.txtBaoHanh);
             this.groupBox1.Controls.Add(this.txtSLTon);
             this.groupBox1.Controls.Add(this.txtTenLK);
@@ -99,13 +99,20 @@ namespace QLLinhKien
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Chung";
             // 
-            // cboLoaiLK
+            // txtLoaiLK
             // 
-            this.cboLoaiLK.FormattingEnabled = true;
-            this.cboLoaiLK.Location = new System.Drawing.Point(50, 96);
-            this.cboLoaiLK.Name = "cboLoaiLK";
-            this.cboLoaiLK.Size = new System.Drawing.Size(176, 26);
-            this.cboLoaiLK.TabIndex = 2;
+            this.txtLoaiLK.Location = new System.Drawing.Point(50, 100);
+            this.txtLoaiLK.Name = "txtLoaiLK";
+            this.txtLoaiLK.Size = new System.Drawing.Size(176, 24);
+            this.txtLoaiLK.TabIndex = 3;
+            // 
+            // cboTenNCC
+            // 
+            this.cboTenNCC.FormattingEnabled = true;
+            this.cboTenNCC.Location = new System.Drawing.Point(556, 96);
+            this.cboTenNCC.Name = "cboTenNCC";
+            this.cboTenNCC.Size = new System.Drawing.Size(176, 26);
+            this.cboTenNCC.TabIndex = 2;
             // 
             // txtBaoHanh
             // 
@@ -120,6 +127,8 @@ namespace QLLinhKien
             this.txtSLTon.Name = "txtSLTon";
             this.txtSLTon.Size = new System.Drawing.Size(176, 24);
             this.txtSLTon.TabIndex = 1;
+            this.txtSLTon.TextChanged += new System.EventHandler(this.txtSLTon_TextChanged);
+            this.txtSLTon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSLTon_KeyPress);
             // 
             // txtTenLK
             // 
@@ -141,6 +150,8 @@ namespace QLLinhKien
             this.txtGiaBan.Name = "txtGiaBan";
             this.txtGiaBan.Size = new System.Drawing.Size(176, 24);
             this.txtGiaBan.TabIndex = 1;
+            this.txtGiaBan.TextChanged += new System.EventHandler(this.txtGiaBan_TextChanged);
+            this.txtGiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaBan_KeyPress);
             // 
             // txtMaLK
             // 
@@ -168,6 +179,26 @@ namespace QLLinhKien
             this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Bảo Hành";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(552, 73);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(151, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Tên Nhà Cung Cấp";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(552, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(113, 20);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Số Lượng Tồn";
             // 
             // label4
             // 
@@ -227,6 +258,7 @@ namespace QLLinhKien
             this.txtTimKiemLK.Name = "txtTimKiemLK";
             this.txtTimKiemLK.Size = new System.Drawing.Size(317, 27);
             this.txtTimKiemLK.TabIndex = 1;
+            this.txtTimKiemLK.TextChanged += new System.EventHandler(this.txtTimKiemLK_TextChanged);
             // 
             // label1
             // 
@@ -237,34 +269,6 @@ namespace QLLinhKien
             this.label1.Size = new System.Drawing.Size(157, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tìm Kiếm Nhanh:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(552, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 20);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Số Lượng Tồn";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(552, 73);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(151, 20);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Tên Nhà Cung Cấp";
-            // 
-            // cboTenNCC
-            // 
-            this.cboTenNCC.FormattingEnabled = true;
-            this.cboTenNCC.Location = new System.Drawing.Point(556, 96);
-            this.cboTenNCC.Name = "cboTenNCC";
-            this.cboTenNCC.Size = new System.Drawing.Size(176, 26);
-            this.cboTenNCC.TabIndex = 2;
             // 
             // groupBox2
             // 
@@ -298,6 +302,7 @@ namespace QLLinhKien
             this.lsvLinhKien.TabIndex = 0;
             this.lsvLinhKien.UseCompatibleStateImageBehavior = false;
             this.lsvLinhKien.View = System.Windows.Forms.View.Details;
+            this.lsvLinhKien.SelectedIndexChanged += new System.EventHandler(this.lsvLinhKien_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -348,14 +353,14 @@ namespace QLLinhKien
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnThem);
             this.flowLayoutPanel1.Controls.Add(this.btnSua);
-            this.flowLayoutPanel1.Controls.Add(this.btnXoa);
             this.flowLayoutPanel1.Controls.Add(this.btnLuu);
+            this.flowLayoutPanel1.Controls.Add(this.btnKoLuu);
             this.flowLayoutPanel1.Controls.Add(this.btnHuy);
             this.flowLayoutPanel1.Controls.Add(this.btnXuatExcel);
             this.flowLayoutPanel1.Controls.Add(this.btnDong);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(312, 242);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(345, 242);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(635, 66);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(732, 66);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // btnThem
@@ -363,70 +368,77 @@ namespace QLLinhKien
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(3, 3);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(99, 63);
+            this.btnThem.Size = new System.Drawing.Size(102, 63);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(108, 3);
+            this.btnSua.Location = new System.Drawing.Point(111, 3);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(82, 63);
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnLuu
             // 
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(289, 3);
+            this.btnLuu.Location = new System.Drawing.Point(199, 3);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(85, 63);
             this.btnLuu.TabIndex = 2;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // btnXoa
+            // btnKoLuu
             // 
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(196, 3);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(87, 63);
-            this.btnXoa.TabIndex = 3;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnKoLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKoLuu.Location = new System.Drawing.Point(290, 3);
+            this.btnKoLuu.Name = "btnKoLuu";
+            this.btnKoLuu.Size = new System.Drawing.Size(92, 63);
+            this.btnKoLuu.TabIndex = 4;
+            this.btnKoLuu.Text = "Ko Lưu";
+            this.btnKoLuu.UseVisualStyleBackColor = true;
+            this.btnKoLuu.Click += new System.EventHandler(this.btnKoLuu_Click);
             // 
             // btnHuy
             // 
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Location = new System.Drawing.Point(380, 3);
+            this.btnHuy.Location = new System.Drawing.Point(388, 3);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(86, 63);
             this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnXuatExcel
             // 
             this.btnXuatExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatExcel.Location = new System.Drawing.Point(472, 3);
+            this.btnXuatExcel.Location = new System.Drawing.Point(480, 3);
             this.btnXuatExcel.Name = "btnXuatExcel";
             this.btnXuatExcel.Size = new System.Drawing.Size(75, 63);
             this.btnXuatExcel.TabIndex = 5;
             this.btnXuatExcel.Text = "Xuất Excel";
             this.btnXuatExcel.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // btnDong
             // 
             this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDong.Location = new System.Drawing.Point(553, 3);
+            this.btnDong.Location = new System.Drawing.Point(561, 3);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(75, 63);
             this.btnDong.TabIndex = 6;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // frmLinhKien
             // 
@@ -440,6 +452,7 @@ namespace QLLinhKien
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmLinhKien";
             this.Text = "Linh Kiện";
+            this.Load += new System.EventHandler(this.frmLinhKien_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -456,7 +469,6 @@ namespace QLLinhKien
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTimKiemLK;
-        private System.Windows.Forms.ComboBox cboLoaiLK;
         private System.Windows.Forms.TextBox txtBaoHanh;
         private System.Windows.Forms.TextBox txtSLTon;
         private System.Windows.Forms.TextBox txtTenLK;
@@ -486,10 +498,11 @@ namespace QLLinhKien
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnXuatExcel;
         private System.Windows.Forms.Button btnDong;
+        private System.Windows.Forms.TextBox txtLoaiLK;
+        private System.Windows.Forms.Button btnKoLuu;
     }
 }

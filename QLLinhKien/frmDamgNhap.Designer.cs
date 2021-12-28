@@ -55,7 +55,7 @@ namespace QLLinhKien
             this.txtTaiKhoan.Location = new System.Drawing.Point(203, 64);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(250, 30);
-            this.txtTaiKhoan.TabIndex = 1;
+            this.txtTaiKhoan.TabIndex = 0;
             // 
             // label2
             // 
@@ -103,9 +103,10 @@ namespace QLLinhKien
             this.btnHuy.Location = new System.Drawing.Point(344, 174);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(109, 42);
-            this.btnHuy.TabIndex = 3;
+            this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // chkHienThiMK
             // 
@@ -114,9 +115,10 @@ namespace QLLinhKien
             this.chkHienThiMK.Location = new System.Drawing.Point(203, 147);
             this.chkHienThiMK.Name = "chkHienThiMK";
             this.chkHienThiMK.Size = new System.Drawing.Size(151, 22);
-            this.chkHienThiMK.TabIndex = 4;
+            this.chkHienThiMK.TabIndex = 2;
             this.chkHienThiMK.Text = "Hiển Thị Mật Khẩu";
             this.chkHienThiMK.UseVisualStyleBackColor = true;
+            this.chkHienThiMK.CheckedChanged += new System.EventHandler(this.chkHienThiMK_CheckedChanged);
             // 
             // frmDamgNhap
             // 
@@ -134,6 +136,7 @@ namespace QLLinhKien
             this.Name = "frmDamgNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
+            this.Load += new System.EventHandler(this.frmDamgNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

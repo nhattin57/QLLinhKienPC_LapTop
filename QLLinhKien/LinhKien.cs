@@ -14,5 +14,45 @@ namespace QLLinhKien
         {
             db = new Database();
         }
+
+        public DataTable layDSTKMK()
+        {
+            string sql = "select TaiKhoan,MatKhau from NHANVIEN";
+            DataTable dt = db.Execute(sql);
+            //Goi phuong thuc truy xuat DL
+            return dt;
+        }
+        public DataTable layTTchoLstViewLinhkien()
+        {
+            string sql =
+            "select STT,MaLinhKien,LoaiLinhKien,TenLinhKien,XuatSu,GiaBan,BaoHanh,SoLuongTon,TenNCC from LinhKien a, NHACUNGCAP b where a.MaNCC = b.MaNCC";
+            DataTable dt = db.Execute(sql);
+            //Goi phuong thuc truy xuat DL
+            return dt;
+        }
+        public DataTable layDSNhaCC()
+        {
+            string sql = "select MaNCC,TenNCC from NHACUNGCAP";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public void themLinhKien(string malk,string loailk,string tenLK,string xuatsu,double giaban,string baohanh,int slton,int maNCC)
+        {
+            string sql = string.Format("insert into LinhKien values('{0}',N'{1}',N'{2}',N'{3}',{4},N'{5}',{6},{7})",
+                                       malk, loailk, tenLK, xuatsu, giaban, baohanh, slton, maNCC);
+            db.ExecuteNonQuery(sql);
+        }
+        public void SuaLinhKien(string malk, string loailk, string tenLK, string xuatsu, double giaban, string baohanh, int slton, int maNCC)
+        {
+            string sql = string.Format("update LinhKien set LoaiLinhKien=N'{1}',TenLinhKien=N'{2}',XuatSu=N'{3}',GiaBan='{4}',BaoHanh=N'{5}',SoLuongTon='{6}',MaNCC='{7}' where MaLinhKien='{0}'",
+                malk, loailk, tenLK, xuatsu, giaban, baohanh, slton, maNCC);
+            db.ExecuteNonQuery(sql);
+        }
+        public DataTable timKiemLKTheoTen(string tenlk)
+        {
+            string sql = string.Format("select STT,MaLinhKien,LoaiLinhKien,TenLinhKien,XuatSu,GiaBan,BaoHanh,SoLuongTon,TenNCC from LinhKien a, NHACUNGCAP b where a.MaNCC=b.MaNCC and TenLinhKien like N'%{0}%'", tenlk);
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
     }
 }
