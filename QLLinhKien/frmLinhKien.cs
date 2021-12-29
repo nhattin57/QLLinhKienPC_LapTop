@@ -137,13 +137,21 @@ namespace QLLinhKien
         {
             Close();
         }
-
+        int demKyTu(string chuoi)
+        {
+            int dem = chuoi.Length;
+            return dem;
+        }
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (themmoi == true)
             {
                 if (txtBaoHanh.Text == "" || txtGiaBan.Text == "" || txtLoaiLK.Text == "" || txtMaLK.Text == "" || txtSLTon.Text == "" || txtTenLK.Text == "")
                     MessageBox.Show("Vui Lòng Nhập đủ thông tin");
+                else if(demKyTu(txtMaLK.Text)>10)
+                {
+                    MessageBox.Show("Mã Linh kiện ko quá 10 ký tự");
+                }
                 else
                 {
                     double giaban = double.Parse(txtGiaBan.Text);

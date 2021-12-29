@@ -54,5 +54,23 @@ namespace QLLinhKien
             DataTable dt = db.Execute(sql);
             return dt;
         }
+        public DataTable layMaVaTenKH()
+        {
+            string sql = "select MaKhachHang,Hoten from KHACHHANG";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public DataTable layMaVaTenNV()
+        {
+            string sql = "select MANV,HoTen from NHANVIEN";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public DataTable layMa_Ten_Gia_CuaLK()
+        {
+            string sql = "select MaLinhKien,TenLinhKien,GiaBan from LinhKien";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
     }
 }
