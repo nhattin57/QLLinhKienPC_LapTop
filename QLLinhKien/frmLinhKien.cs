@@ -106,10 +106,15 @@ namespace QLLinhKien
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            closeTextBoxCBB(false);
-            txtMaLK.ReadOnly = true;
-            setNut(false);
-            themmoi = false;
+            if (lsvLinhKien.SelectedIndices.Count <= 0)
+                MessageBox.Show("Mời chọn linh kiện để sửa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                closeTextBoxCBB(false);
+                txtMaLK.ReadOnly = true;
+                setNut(false);
+                themmoi = false;
+            }
         }
         void huyNDtextbox()
         {
@@ -131,6 +136,7 @@ namespace QLLinhKien
         {
             setNut(true);
             huyNDtextbox();
+            closeTextBoxCBB(true);
         }
 
         private void btnDong_Click(object sender, EventArgs e)
@@ -142,6 +148,17 @@ namespace QLLinhKien
             int dem = chuoi.Length;
             return dem;
         }
+        bool kiemTraTrungMaLK(string maLK)
+        {
+            DataTable dt = lk.layMaLK();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string maLKtemp = dt.Rows[i][0].ToString().Trim();
+                if (maLK.Equals(maLK))
+                    return false;
+            }
+            return true;
+        }
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (themmoi == true)
@@ -151,6 +168,10 @@ namespace QLLinhKien
                 else if(demKyTu(txtMaLK.Text)>10)
                 {
                     MessageBox.Show("Mã Linh kiện ko quá 10 ký tự");
+                }
+                else if(kiemTraTrungMaLK(txtMaLK.Text)==false)
+                {
+                    MessageBox.Show("Mã Linh Kiện Đã Tồn Tại Vui Lòng Nhập Mã Khác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

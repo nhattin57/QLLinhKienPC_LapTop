@@ -131,6 +131,7 @@ namespace QLLinhKien
             this.txtMaHD.Name = "txtMaHD";
             this.txtMaHD.Size = new System.Drawing.Size(199, 27);
             this.txtMaHD.TabIndex = 2;
+            this.txtMaHD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaHD_KeyPress);
             // 
             // label3
             // 

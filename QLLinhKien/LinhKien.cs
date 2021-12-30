@@ -72,5 +72,38 @@ namespace QLLinhKien
             DataTable dt = db.Execute(sql);
             return dt;
         }
+        public DataTable layMa_Va_soLuongLK()
+        {
+            string sql = "select MaLinhKien,SoLuongTon from LinhKien";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public DataTable layMaHD()
+        {
+            string sql = "select MaHoaDon from HOADON";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public void themHoaDon(string maHD, int maKH, int maNV,string ngayXuatHD,double tongtien)
+        {
+            string sql = string.Format("insert into HOADON values('{0}','{1}','{2}','{3}','{4}')", maHD, maKH, maNV, ngayXuatHD, tongtien);
+            db.ExecuteNonQuery(sql);
+        }
+        public void themCTHD(string maHD, string maLK,string tenLK,double giaBan,int soluong,double thanhtien)
+        {
+            string sql = string.Format("insert into CTHD values ('{0}','{1}',N'{2}','{3}','{4}','{5}')", maHD, maLK, tenLK, giaBan, soluong, thanhtien);
+            db.ExecuteNonQuery(sql);
+        }
+        public void upDateSLLinhKien(int soLuong, string maLK)
+        {
+            string sql = string.Format("update LinhKien set SoLuongTon=SoLuongTon-'{0}' where MaLinhKien='{1}'", soLuong, maLK);
+            db.ExecuteNonQuery(sql);
+        }
+        public DataTable layMaLK()
+        {
+            string sql = "select MaLinhKien from LinhKien";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
     }
 }

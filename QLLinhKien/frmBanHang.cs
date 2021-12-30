@@ -17,6 +17,8 @@ namespace QLLinhKien
             InitializeComponent();
         }
         LinhKien lk = new LinhKien();
+        public string TenLKCoSLKoDu;
+        public int SL_LK;
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -172,46 +174,105 @@ namespace QLLinhKien
             txtMaLK.Text = "";
             cboLinhKien.Focus();
         }
-        bool kiemTraNhanVienHopLe(string tennv)
+        public bool kiemTraNhanVienHopLe(string tenNV)
         {
             DataTable dt = lk.layMaVaTenNV();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 string tenNVtemp = dt.Rows[i][1].ToString().Trim();
-                if (tenNVtemp.Equals(tennv))
+                if (tenNV.Equals(tenNVtemp))
                     return true;
             }
             return false;
         }
-        bool kiemTraKhachHangHopLe(string maKH)
+        public bool kiemTraKhachHangHopLe(string tenKH)
         {
-            DataTable dt = lk.layMaVaTenNV();
+            DataTable dt = lk.layMaVaTenKH();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                string maKHtemp = dt.Rows[i][1].ToString().Trim();
-                if (maKHtemp.Equals(maKH))
+                string tenKHtemp = dt.Rows[i][1].ToString().Trim();
+                if (tenKH.Equals(tenKHtemp))
                     return true;
             }
             return false;
         }
-        bool kiemTraBanHang()
+        public bool kiemTraBanHang()
         {
-    
+            
             if(kiemTraKhachHangHopLe(cboKhachHang.Text)==true && kiemTraNhanVienHopLe(cboNhanVien.Text)==true)
                 return true;
             return false;
         }
+        public bool kiemTraSoLuongLKDu()
+        {
+            DataTable dt = lk.layMa_Va_soLuongLK();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                int SoLuongTon = int.Parse(dt.Rows[i][1].ToString());
+                string maLK = dt.Rows[i][0].ToString().Trim();
+                for (int j = 0; j < lvSPDuocChon.Items.Count; j++)
+                {
+                    string malkDuocChon = lvSPDuocChon.Items[j].SubItems[1].Text.Trim();
+                    int SoLuongBan = int.Parse(lvSPDuocChon.Items[j].SubItems[3].Text);
+                    if (maLK.Equals(malkDuocChon) && SoLuongBan > SoLuongTon)
+                        { 
+                            TenLKCoSLKoDu= lvSPDuocChon.Items[j].SubItems[0].Text;
+                            SL_LK = SoLuongTon;
+                            return false;
+                        } 
+                }
+            }
+            return true;
+        }
+        public bool kiemTraTrungMAHD(string maHD)
+        {
+            DataTable dt = lk.layMaHD();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string maHDtemp = dt.Rows[i][0].ToString().Trim();
+                if (maHD.Equals(maHDtemp))
+                    return false;
+            }
+            return true;
+        }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (lvSPDuocChon.Items.Count < 0 || cboKhachHang.Text == "" || cboNhanVien.Text == "" || txtMaHD.Text == "")
+            if (lvSPDuocChon.Items.Count <= 0 || cboKhachHang.Text == "" || cboNhanVien.Text == "" || txtMaHD.Text == "")
                 MessageBox.Show("Vui Lòng chọn sản phẩm và Nhập đủ thông tin","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             else if (kiemTraBanHang() == false)
             {
                 MessageBox.Show("Vui Lòng Chọn Khách Hàng Và Nhân Viên Hợp Lệ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if(kiemTraSoLuongLKDu()==false)
+            {
+                MessageBox.Show(TenLKCoSLKoDu + " Có Số Lượng Tồn = " + SL_LK + " Không đủ bản", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if(kiemTraTrungMAHD(txtMaHD.Text)==false)
+            {
+                MessageBox.Show("Mã Hóa Đơn Đã Tồn Tại Vui Lòng Nhập Mã Hóa Đơn Khác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
             {
-
+                int manv = int.Parse(cboNhanVien.SelectedValue.ToString());
+                int maKH = int.Parse(cboKhachHang.SelectedValue.ToString());
+                double tongtien = double.Parse(txtTongTien.Text);
+                string ngayXuatHD = String.Format("{0:MM/dd/yyyy}", dtpNgayXuatHD.Value);
+                string maHD = txtMaHD.Text.ToUpper().Trim();
+                lk.themHoaDon(maHD, maKH, manv, ngayXuatHD, tongtien);
+                for (int i = 0; i < lvSPDuocChon.Items.Count; i++)
+                {
+                    string maLK = lvSPDuocChon.Items[i].SubItems[1].Text.Trim();
+                    string tenLK = lvSPDuocChon.Items[i].SubItems[0].Text;
+                    double giaban= double.Parse(lvSPDuocChon.Items[i].SubItems[2].Text);
+                    int soluong = int.Parse(lvSPDuocChon.Items[i].SubItems[3].Text);
+                    double thanhTien = double.Parse(lvSPDuocChon.Items[i].SubItems[4].Text);
+                    lk.themCTHD(maHD, maLK, tenLK, giaban, soluong, thanhTien);
+                    lk.upDateSLLinhKien(soluong, maLK);
+                }
+                lvSPDuocChon.Items.Clear();
+                txtMaHD.Text = "";
+                txtSoLuong.Text = "";
+                MessageBox.Show("Thanh Toán Thánh Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -228,6 +289,12 @@ namespace QLLinhKien
         private void btnDong_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txtMaHD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txtMaHD.Text.Length >9 && !char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

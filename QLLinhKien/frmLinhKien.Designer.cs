@@ -104,7 +104,7 @@ namespace QLLinhKien
             this.txtLoaiLK.Location = new System.Drawing.Point(50, 100);
             this.txtLoaiLK.Name = "txtLoaiLK";
             this.txtLoaiLK.Size = new System.Drawing.Size(176, 24);
-            this.txtLoaiLK.TabIndex = 3;
+            this.txtLoaiLK.TabIndex = 1;
             // 
             // cboTenNCC
             // 
@@ -112,21 +112,21 @@ namespace QLLinhKien
             this.cboTenNCC.Location = new System.Drawing.Point(556, 96);
             this.cboTenNCC.Name = "cboTenNCC";
             this.cboTenNCC.Size = new System.Drawing.Size(176, 26);
-            this.cboTenNCC.TabIndex = 2;
+            this.cboTenNCC.TabIndex = 7;
             // 
             // txtBaoHanh
             // 
             this.txtBaoHanh.Location = new System.Drawing.Point(303, 148);
             this.txtBaoHanh.Name = "txtBaoHanh";
             this.txtBaoHanh.Size = new System.Drawing.Size(176, 24);
-            this.txtBaoHanh.TabIndex = 1;
+            this.txtBaoHanh.TabIndex = 5;
             // 
             // txtSLTon
             // 
             this.txtSLTon.Location = new System.Drawing.Point(556, 46);
             this.txtSLTon.Name = "txtSLTon";
             this.txtSLTon.Size = new System.Drawing.Size(176, 24);
-            this.txtSLTon.TabIndex = 1;
+            this.txtSLTon.TabIndex = 6;
             this.txtSLTon.TextChanged += new System.EventHandler(this.txtSLTon_TextChanged);
             this.txtSLTon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSLTon_KeyPress);
             // 
@@ -135,21 +135,21 @@ namespace QLLinhKien
             this.txtTenLK.Location = new System.Drawing.Point(50, 148);
             this.txtTenLK.Name = "txtTenLK";
             this.txtTenLK.Size = new System.Drawing.Size(176, 24);
-            this.txtTenLK.TabIndex = 1;
+            this.txtTenLK.TabIndex = 2;
             // 
             // txtXuatSu
             // 
             this.txtXuatSu.Location = new System.Drawing.Point(303, 46);
             this.txtXuatSu.Name = "txtXuatSu";
             this.txtXuatSu.Size = new System.Drawing.Size(176, 24);
-            this.txtXuatSu.TabIndex = 1;
+            this.txtXuatSu.TabIndex = 3;
             // 
             // txtGiaBan
             // 
             this.txtGiaBan.Location = new System.Drawing.Point(303, 96);
             this.txtGiaBan.Name = "txtGiaBan";
             this.txtGiaBan.Size = new System.Drawing.Size(176, 24);
-            this.txtGiaBan.TabIndex = 1;
+            this.txtGiaBan.TabIndex = 4;
             this.txtGiaBan.TextChanged += new System.EventHandler(this.txtGiaBan_TextChanged);
             this.txtGiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaBan_KeyPress);
             // 
@@ -158,7 +158,7 @@ namespace QLLinhKien
             this.txtMaLK.Location = new System.Drawing.Point(50, 46);
             this.txtMaLK.Name = "txtMaLK";
             this.txtMaLK.Size = new System.Drawing.Size(176, 24);
-            this.txtMaLK.TabIndex = 1;
+            this.txtMaLK.TabIndex = 0;
             // 
             // label3
             // 
@@ -257,7 +257,7 @@ namespace QLLinhKien
             this.txtTimKiemLK.Location = new System.Drawing.Point(303, 14);
             this.txtTimKiemLK.Name = "txtTimKiemLK";
             this.txtTimKiemLK.Size = new System.Drawing.Size(317, 27);
-            this.txtTimKiemLK.TabIndex = 1;
+            this.txtTimKiemLK.TabIndex = 0;
             this.txtTimKiemLK.TextChanged += new System.EventHandler(this.txtTimKiemLK_TextChanged);
             // 
             // label1
@@ -402,7 +402,7 @@ namespace QLLinhKien
             this.btnKoLuu.Location = new System.Drawing.Point(290, 3);
             this.btnKoLuu.Name = "btnKoLuu";
             this.btnKoLuu.Size = new System.Drawing.Size(92, 63);
-            this.btnKoLuu.TabIndex = 4;
+            this.btnKoLuu.TabIndex = 3;
             this.btnKoLuu.Text = "Ko Lưu";
             this.btnKoLuu.UseVisualStyleBackColor = true;
             this.btnKoLuu.Click += new System.EventHandler(this.btnKoLuu_Click);
