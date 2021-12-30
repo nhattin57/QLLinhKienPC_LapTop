@@ -105,5 +105,11 @@ namespace QLLinhKien
             DataTable dt = db.Execute(sql);
             return dt;
         }
+        public DataTable layTenLK()
+        {
+            string sql = "select TenLinhKien from LinhKien";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
     }
 }

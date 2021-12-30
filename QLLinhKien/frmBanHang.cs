@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Globalization;
 namespace QLLinhKien
 {
     public partial class frmBanHang : Form
@@ -69,14 +69,7 @@ namespace QLLinhKien
 
         private void txtGiaBan_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-       (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -84,14 +77,7 @@ namespace QLLinhKien
 
         private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-       (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -119,12 +105,28 @@ namespace QLLinhKien
             }
             return false;
         }
+        bool kiemTraTenLinhKienHopLe(string tenLK)
+        {
+            DataTable dt = lk.layTenLK();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string tenLKtem = dt.Rows[i][0].ToString().Trim();
+                if (tenLK.Trim().Equals(tenLKtem))
+                    return true;
+            }
+            return false;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
            
             if (txtSoLuong.Text == "" || txtGiaBan.Text == "" || cboLinhKien.Text == "")
             {
                 MessageBox.Show("Vui Lòng Nhập đủ thông tin", "Thông Báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if(kiemTraTenLinhKienHopLe(cboLinhKien.Text)==false)
+            {
+                MessageBox.Show("Tên Linh Kiện "+cboLinhKien.Text + " không hợp lệ vui lòng chọn linh kiện trong danh sách", "Thông Báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (kiemTraTrungSPTrongListView(txtMaLK.Text)==true)
             {
@@ -155,7 +157,9 @@ namespace QLLinhKien
                 lvi.SubItems.Add(thanhtien.ToString());
                 double tongtien = tinhTongTienTrongLV();
                 txtTongTien.Text = tongtien.ToString();
-               
+                CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+                string a = double.Parse(txtTongTien.Text).ToString("#,### VND", cul.NumberFormat);
+                txtTongTien.Text = a;
             }
         }
         void hienThiThongTinLKKhiChon(string tenlk)
@@ -303,6 +307,7 @@ namespace QLLinhKien
                 lvSPDuocChon.Items.Clear();
                 txtMaHD.Text = "";
                 txtSoLuong.Text = "";
+                txtTongTien.Text = "";
                 MessageBox.Show("Thanh Toán Thánh Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
