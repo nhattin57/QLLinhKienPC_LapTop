@@ -19,6 +19,7 @@ namespace QLLinhKien
         LinhKien lk = new LinhKien();
         public string TenLKCoSLKoDu;
         public int SL_LK;
+        public string maLKTrungTrongListView;
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -105,12 +106,42 @@ namespace QLLinhKien
             }
             return tongtien;
         }
+        bool kiemTraTrungSPTrongListView(string maLK)
+        {
+            for (int i = 0; i < lvSPDuocChon.Items.Count; i++)
+            {
+                string maLKtem = lvSPDuocChon.Items[i].SubItems[1].Text.Trim();
+                if (maLK.Trim().Equals(maLKtem))
+                {
+                    maLKTrungTrongListView = maLKtem;
+                    return true;
+                }
+            }
+            return false;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
            
             if (txtSoLuong.Text == "" || txtGiaBan.Text == "" || cboLinhKien.Text == "")
             {
                 MessageBox.Show("Vui Lòng Nhập đủ thông tin", "Thông Báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (kiemTraTrungSPTrongListView(txtMaLK.Text)==true)
+            {
+                for (int i = 0; i < lvSPDuocChon.Items.Count; i++)
+                {
+                    string malk= lvSPDuocChon.Items[i].SubItems[1].Text.Trim();
+                    if (malk.Equals(maLKTrungTrongListView))
+                    {
+                        int slMoi = int.Parse(txtSoLuong.Text);
+                        int slCu = int.Parse(lvSPDuocChon.Items[i].SubItems[3].Text);
+                        int tongsl = slCu + slMoi;
+                        double giaban = double.Parse(txtGiaBan.Text);
+                        double thanhtien = giaban * tongsl;
+                        lvSPDuocChon.Items[i].SubItems[3].Text = tongsl.ToString();
+                        lvSPDuocChon.Items[i].SubItems[4].Text = thanhtien.ToString();
+                    }
+                }
             }
             else
             {
