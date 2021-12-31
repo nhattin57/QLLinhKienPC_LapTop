@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +61,12 @@
     </Compile>
     <Compile Include="frmBanHang.Designer.cs">
       <DependentUpon>frmBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNhanVien.Designer.cs">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQLHoaDon.cs">
       <SubType>Form</SubType>
@@ -72,6 +87,16 @@
       <DependentUpon>frmDamgNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="LinhKien.cs" />
+    <Compile Include="model\CHUCVU.cs" />
+    <Compile Include="model\CTHD.cs" />
+    <Compile Include="model\CTPNH.cs" />
+    <Compile Include="model\DataQLLK.cs" />
+    <Compile Include="model\HOADON.cs" />
+    <Compile Include="model\KHACHHANG.cs" />
+    <Compile Include="model\LinhKien.cs" />
+    <Compile Include="model\NHACUNGCAP.cs" />
+    <Compile Include="model\NHANVIEN.cs" />
+    <Compile Include="model\PhieuNhapHang.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBanHang.resx">
@@ -82,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLinhKien.resx">
       <DependentUpon>frmLinhKien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNhanVien.resx">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLHoaDon.resx">
       <DependentUpon>frmQLHoaDon.cs</DependentUpon>
@@ -95,6 +123,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

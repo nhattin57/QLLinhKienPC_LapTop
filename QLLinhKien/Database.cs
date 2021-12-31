@@ -15,7 +15,7 @@ namespace QLLinhKien
         //tu thay data soure= ten may cua minh de chay duoc
         public Database()
         {
-            string strCnn = "Data Source=DESKTOP-FNPS5K6\\SQLEXPRESS; Database=QLLinhKienPC_Laptop; UID=sa; PWD=123456; Integrated Security = True";
+            string strCnn = "Data Source=DESKTOP-RCFES7K\\SQLEXPRESS; Database=QLLinhKienPC_Laptop; Integrated Security = True";
             sqlConn = new SqlConnection(strCnn);
         }
         //Phuong thuc de thuc hien cau lenh strSQL truy vân du lieu
