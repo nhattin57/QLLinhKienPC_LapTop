@@ -111,5 +111,45 @@ namespace QLLinhKien
             DataTable dt = db.Execute(sql);
             return dt;
         }
+        public DataTable layDSHoaDon()
+        {
+            string sql = "select MaHoaDon,c.Hoten,b.HoTen,NgayXuatHoaDon,Tongtien from HOADON a,NHANVIEN b,KHACHHANG c where a.MaKhachHang=c.MaKhachHang and a.MANV=b.MANV";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public DataTable layDSCTHD()
+        {
+            string sql = "select a.TenLinhKien,a.MaLinhKien,a.GiaBan,SoLuong,ThanhTien from CTHD a,LinhKien b where a.MaLinhKien=b.MaLinhKien";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public void updateHOADON(string maHD,double tongtien)
+        {
+            string sql = string.Format("update HOADON set Tongtien=tien+'{0}' where MaHoaDon='{1}'", tongtien, maHD);
+            db.ExecuteNonQuery(sql);
+        }
+        public void updateCTHD(string maHD,string maLK,string tenLK,double giaban,int soluong,double thanhtien)
+        {
+            string sql = string.Format("update CTHD set TenLinhKien=N'{2}',GiaBan='{3}',SoLuong='{4}',ThanhTien='{5}' where MaHoaDon='{0}' and MaLinhKien='{1}'", maHD, maLK, tenLK, giaban, soluong, thanhtien);
+            db.ExecuteNonQuery(sql);
+        }
+        public DataTable TimCTHDTheoMa(string maHD)
+        {
+            string sql = string.Format("select MaHoaDon,a.TenLinhKien,a.MaLinhKien,a.GiaBan,SoLuong,ThanhTien from CTHD a,LinhKien b where a.MaLinhKien=b.MaLinhKien and MaHoaDon='{0}'", maHD);
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public DataTable timHoaDonTheoMa(string maHD)
+        {
+            string sql = string.Format("select MaHoaDon,c.Hoten,b.HoTen,NgayXuatHoaDon,Tongtien from HOADON a,NHANVIEN b,KHACHHANG c where a.MaKhachHang=c.MaKhachHang and a.MANV=b.MANV and MaHoaDon='{0}'", maHD);
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public DataTable layThanhTienTuCTHD(string maHD)
+        {
+            string sql = string.Format("select ThanhTien from CTHD where MaHoaDon='{0}'", maHD);
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
     }
 }

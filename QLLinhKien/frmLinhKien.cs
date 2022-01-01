@@ -169,7 +169,7 @@ namespace QLLinhKien
                 {
                     MessageBox.Show("Mã Linh kiện ko quá 10 ký tự");
                 }
-                else if(kiemTraTrungMaLK(txtMaLK.Text)==false)
+                else if(kiemTraTrungMaLK(txtMaLK.Text)==true)
                 {
                     MessageBox.Show("Mã Linh Kiện Đã Tồn Tại Vui Lòng Nhập Mã Khác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
