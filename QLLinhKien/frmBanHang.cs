@@ -270,6 +270,16 @@ namespace QLLinhKien
             }
             return true;
         }
+        Double tinhTongTienTuListView()
+        {
+            double tongtien = 0;
+            for (int i = 0; i < lvSPDuocChon.Items.Count; i++)
+            {
+                double thanhtien = double.Parse(lvSPDuocChon.Items[i].SubItems[4].Text);
+                tongtien += thanhtien;
+            }
+            return tongtien;
+        }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             if (lvSPDuocChon.Items.Count <= 0 || cboKhachHang.Text == "" || cboNhanVien.Text == "" || txtMaHD.Text == "")
@@ -290,7 +300,7 @@ namespace QLLinhKien
             {
                 int manv = int.Parse(cboNhanVien.SelectedValue.ToString());
                 int maKH = int.Parse(cboKhachHang.SelectedValue.ToString());
-                double tongtien = double.Parse(txtTongTien.Text);
+                double tongtien = tinhTongTienTuListView();
                 string ngayXuatHD = String.Format("{0:MM/dd/yyyy}", dtpNgayXuatHD.Value);
                 string maHD = txtMaHD.Text.ToUpper().Trim();
                 lk.themHoaDon(maHD, maKH, manv, ngayXuatHD, tongtien);

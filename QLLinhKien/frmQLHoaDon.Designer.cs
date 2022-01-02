@@ -64,13 +64,13 @@ namespace QLLinhKien
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnkoLuu = new System.Windows.Forms.Button();
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cboLinhKien = new System.Windows.Forms.ComboBox();
+            this.txtTenLK = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -225,7 +225,7 @@ namespace QLLinhKien
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cboLinhKien);
+            this.groupBox2.Controls.Add(this.txtTenLK);
             this.groupBox2.Controls.Add(this.txtThanhTien);
             this.groupBox2.Controls.Add(this.txtSoLuong);
             this.groupBox2.Controls.Add(this.txtGiaBan);
@@ -397,6 +397,7 @@ namespace QLLinhKien
             this.lsvCTHD.UseCompatibleStateImageBehavior = false;
             this.lsvCTHD.View = System.Windows.Forms.View.Details;
             this.lsvCTHD.SelectedIndexChanged += new System.EventHandler(this.lsvCTHD_SelectedIndexChanged);
+            this.lsvCTHD.DoubleClick += new System.EventHandler(this.lsvCTHD_DoubleClick);
             // 
             // columnHeader6
             // 
@@ -417,6 +418,11 @@ namespace QLLinhKien
             // 
             this.columnHeader9.Text = "Số Lượng";
             this.columnHeader9.Width = 90;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Thành Tiền";
+            this.columnHeader10.Width = 100;
             // 
             // flowLayoutPanel1
             // 
@@ -449,6 +455,7 @@ namespace QLLinhKien
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -472,18 +479,13 @@ namespace QLLinhKien
             this.btnkoLuu.UseVisualStyleBackColor = true;
             this.btnkoLuu.Click += new System.EventHandler(this.btnkoLuu_Click);
             // 
-            // columnHeader10
+            // txtTenLK
             // 
-            this.columnHeader10.Text = "Thành Tiền";
-            this.columnHeader10.Width = 100;
-            // 
-            // cboLinhKien
-            // 
-            this.cboLinhKien.FormattingEnabled = true;
-            this.cboLinhKien.Location = new System.Drawing.Point(24, 54);
-            this.cboLinhKien.Name = "cboLinhKien";
-            this.cboLinhKien.Size = new System.Drawing.Size(197, 28);
-            this.cboLinhKien.TabIndex = 0;
+            this.txtTenLK.Location = new System.Drawing.Point(24, 57);
+            this.txtTenLK.Name = "txtTenLK";
+            this.txtTenLK.ReadOnly = true;
+            this.txtTenLK.Size = new System.Drawing.Size(197, 27);
+            this.txtTenLK.TabIndex = 4;
             // 
             // frmQLHoaDon
             // 
@@ -555,6 +557,6 @@ namespace QLLinhKien
         private System.Windows.Forms.ComboBox cboNhanVien;
         private System.Windows.Forms.ComboBox cboKhachHang;
         private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ComboBox cboLinhKien;
+        private System.Windows.Forms.TextBox txtTenLK;
     }
 }

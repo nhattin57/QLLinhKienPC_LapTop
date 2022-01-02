@@ -17,7 +17,7 @@ namespace QLLinhKien
             InitializeComponent();
         }
         LinhKien lk = new LinhKien();
-        
+         static bool themHoaDon;
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -72,13 +72,7 @@ namespace QLLinhKien
             cboKhachHang.DisplayMember = "Hoten";
             cboKhachHang.ValueMember = "MaKhachHang";
         }
-        void hienThiCBBLinhKien()
-        {
-            DataTable dt = lk.layMa_Ten_Gia_CuaLK();
-            cboLinhKien.DataSource = dt;
-            cboLinhKien.DisplayMember = "TenLinhKien";
-            cboLinhKien.ValueMember = "MaLinhKien";
-        }
+        
         void closeTextBox_CBB(bool e)
         {
             txtThanhTien.Enabled = !e;
@@ -86,7 +80,7 @@ namespace QLLinhKien
             txtGiaBan.Enabled = !e;
             txtTongTien.Enabled = !e;
             cboKhachHang.Enabled = !e;
-            cboLinhKien.Enabled = !e;
+            txtTenLK.Enabled = !e;
             cboNhanVien.Enabled = !e;
             dtpNgayXuatHD.Enabled = !e;
         }
@@ -133,7 +127,8 @@ namespace QLLinhKien
                 txtThanhTien.Text = "";
                 txtSoLuong.Text = "";
                 txtGiaBan.Text = "";
-                cboLinhKien.Text = "";
+                txtTenLK.Text = "";
+                themHoaDon = true;
             }
         }
 
@@ -141,10 +136,11 @@ namespace QLLinhKien
         {
             for (int i = 0; i < lsvCTHD.SelectedItems.Count; i++)
             {
-                cboLinhKien.Text = lsvCTHD.SelectedItems[i].SubItems[0].Text;
+                txtTenLK.Text = lsvCTHD.SelectedItems[i].SubItems[0].Text;
                 txtGiaBan.Text = lsvCTHD.SelectedItems[i].SubItems[2].Text;
                 txtSoLuong.Text= lsvCTHD.SelectedItems[i].SubItems[3].Text;
                 txtThanhTien.Text= lsvCTHD.SelectedItems[i].SubItems[4].Text;
+                themHoaDon = false;
             }
         }
         public bool kiemTraNhanVienHopLe(string tenNV)
@@ -194,7 +190,6 @@ namespace QLLinhKien
             else
             {
                 hienThiCBBKhachHang();
-                hienThiCBBLinhKien();
                 hienThiCBBNhanVien();
                 setNut(false);
                 closeTextBox_CBB(false);
@@ -226,7 +221,7 @@ namespace QLLinhKien
             txtGiaBan.Text = "";
             txtTongTien.Text = "";
             cboKhachHang.Text = "";
-            cboLinhKien.Text = "";
+            txtTenLK.Text = "";
             cboNhanVien.Text = "";
             dtpNgayXuatHD.Text = "";
         }
@@ -251,22 +246,41 @@ namespace QLLinhKien
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (txtSoLuong.Text == "" || txtGiaBan.Text == "" || txtThanhTien.Text == "" || cboLinhKien.Text == "")
-                MessageBox.Show("Vui Lòng Nhập Đủ Thông tin Để Sửa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if(kiemTraKHVaNVHopLe()==false)
+            if (kiemTraKHVaNVHopLe() == false)
                 MessageBox.Show("Vui Lòng Chọn Khách Hàng Và Nhân Viên Hợp Lệ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else
+            else if (themHoaDon==true)
             {
                 string maHD = txtMaHoaDon.Text.Trim();
-                string tenLK = cboLinhKien.Text;
-                string maLK = cboLinhKien.SelectedValue.ToString().Trim();
-                double giaban = double.Parse(txtGiaBan.Text);
-                int sl = int.Parse(txtSoLuong.Text);
-                double thanhtien = double.Parse(txtThanhTien.Text);
-                lk.updateCTHD(maHD, maLK, tenLK, giaban, sl, thanhtien);
-                double tongtien = tongTienTuCTHD(maHD);
-                lk.updateHOADON(maHD, tongtien);
-                MessageBox.Show("Thành công");
+                int maKH = int.Parse(cboKhachHang.SelectedValue.ToString());
+                int maNV = int.Parse(cboNhanVien.SelectedValue.ToString());
+                string ngayXuatHD = String.Format("{0:MM/dd/yyyy}", dtpNgayXuatHD.Value);
+                lk.updateHOADON(maHD, maKH, maNV, ngayXuatHD);
+                hienThiHoaDon();
+                MessageBox.Show("Chỉnh sửa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (txtGiaBan.Text == "" || txtSoLuong.Text == "" || txtThanhTien.Text == "")
+                    MessageBox.Show("Vui Lòng Nhập Đủ Thông Tin Để Sửa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                {
+                    string maHD = txtMaHoaDon.Text.Trim();
+                    string tenlk;
+                    string maLK = lsvCTHD.SelectedItems[0].SubItems[1].Text.Trim();
+                    int maKH = int.Parse(cboKhachHang.SelectedValue.ToString());
+                    int maNV = int.Parse(cboNhanVien.SelectedValue.ToString());
+                    string ngayXuatHD = String.Format("{0:MM/dd/yyyy}", dtpNgayXuatHD.Value);
+                    double giaban = double.Parse(txtGiaBan.Text);
+                    int sl = int.Parse(txtSoLuong.Text);
+                    double thanhtien = double.Parse(txtThanhTien.Text);
+                    lk.updateCTHD(maHD, maLK, giaban, sl, thanhtien);
+                    double tongtien = tongTienTuCTHD(maHD);
+                    lk.updateHOADONBeforeCTHD(maHD, maKH, maNV, ngayXuatHD, tongtien);
+                    hienThiHoaDon();
+                    hienThiCTHDTheoHoaDon(maHD);
+                    MessageBox.Show("Chỉnh sửa Thành Công","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                
             }
         }
 
@@ -297,6 +311,50 @@ namespace QLLinhKien
         private void txtGiaBan_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (lsvHoaDon.SelectedIndices.Count < 1)
+                MessageBox.Show("Vui Lòng chọn Hóa Đơn Để Xóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if(lsvCTHD.SelectedIndices.Count>0)
+                MessageBox.Show("Không thể xóa chi tiết hóa đơn bằng thao tác này, Muốn xóa chi tiết hóa đơn vui lòng nhấn đúp chuột vào bảng chi tiết hóa đơn",
+                    "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                DialogResult ret = MessageBox.Show("Bạn có chắn chắc muốn xóa hóa đơn này không?", "Thông Báo",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (ret == DialogResult.Yes)
+                {
+                    string maHD = txtMaHoaDon.Text.Trim();
+                    lk.deleteCTHD(maHD);
+                    lk.deleteHoaDon(maHD);
+                    MessageBox.Show("Xóa hóa đơn thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    hienThiHoaDon();
+                    lsvCTHD.Items.Clear();
+                }
+                
+            }
+        }
+
+        private void lsvCTHD_DoubleClick(object sender, EventArgs e)
+        {
+            DialogResult ret= MessageBox.Show("Bạn có chắn chắc muốn xóa chi tiết hóa đơn này không?", "Thông Báo",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (ret == DialogResult.Yes)
+            {
+                string maHD = txtMaHoaDon.Text;
+                string maLK = lsvCTHD.SelectedItems[0].SubItems[1].Text.Trim();
+                lk.deleteCTHDwhenDoubleClickonListView(maHD, maLK);
+                double tongtien = tongTienTuCTHD(maHD);
+                lk.updateHOADONwhendoubleClickonListView(maHD, tongtien);
+                MessageBox.Show("Xóa chi tiết hóa đơn thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+                string a = double.Parse(tongtien.ToString()).ToString("#,### VND", cul.NumberFormat);
+                txtTongTien.Text = a;
+                hienThiCTHDTheoHoaDon(maHD);
+                hienThiHoaDon();
+            }
         }
     }
 }

@@ -123,15 +123,20 @@ namespace QLLinhKien
             DataTable dt = db.Execute(sql);
             return dt;
         }
-        public void updateHOADON(string maHD,double tongtien)
+        public void updateHOADON(string maHD,int maKH,int maNV,string ngayxuatHD)
         {
-            string sql = string.Format("update HOADON set Tongtien=tien+'{0}' where MaHoaDon='{1}'", tongtien, maHD);
+            string sql = string.Format("update HOADON set MaKhachHang='{1}',MANV='{2}',NgayXuatHoaDon='{3}' where MaHoaDon='{0}'", maHD,maKH,maNV,ngayxuatHD);
             db.ExecuteNonQuery(sql);
         }
-        public void updateCTHD(string maHD,string maLK,string tenLK,double giaban,int soluong,double thanhtien)
+        public void updateCTHD(string maHD,string maLK,double giaban,int soluong,double thanhtien)
         {
-            string sql = string.Format("update CTHD set TenLinhKien=N'{2}',GiaBan='{3}',SoLuong='{4}',ThanhTien='{5}' where MaHoaDon='{0}' and MaLinhKien='{1}'", maHD, maLK, tenLK, giaban, soluong, thanhtien);
+            string sql = string.Format("update CTHD set GiaBan='{2}',SoLuong='{3}',ThanhTien='{4}' where MaHoaDon='{0}' and MaLinhKien='{1}'", maHD, maLK, giaban, soluong, thanhtien);
             db.ExecuteNonQuery(sql);
+        }
+        public void updateHOADONBeforeCTHD(string maHD, int maKH, int maNV, string ngayxuatHD,double tongtien)
+        {
+            string sql = string.Format("update HOADON set MaKhachHang='{1}',MANV='{2}',NgayXuatHoaDon='{3}',Tongtien='{4}' where MaHoaDon='{0}'", maHD, maKH, maNV, ngayxuatHD, tongtien);
+                db.ExecuteNonQuery(sql);
         }
         public DataTable TimCTHDTheoMa(string maHD)
         {
@@ -150,6 +155,26 @@ namespace QLLinhKien
             string sql = string.Format("select ThanhTien from CTHD where MaHoaDon='{0}'", maHD);
             DataTable dt = db.Execute(sql);
             return dt;
+        }
+        public void deleteCTHD(string maHD)
+        {
+            string sql = string.Format("delete CTHD where MaHoaDon='{0}'", maHD);
+            db.ExecuteNonQuery(sql);
+        }
+        public void deleteHoaDon(string maHD)
+        {
+            string sql = string.Format("delete HOADON where MaHoaDon='{0}'", maHD);
+            db.ExecuteNonQuery(sql);
+        }
+        public void deleteCTHDwhenDoubleClickonListView(string maHD,string maLK)
+        {
+            string sql = string.Format("delete CTHD where MaHoaDon='{0}' and MaLinhKien='{1}'", maHD, maLK);
+            db.ExecuteNonQuery(sql);
+        }
+        public void updateHOADONwhendoubleClickonListView(string maHD,double tongtien)
+        {
+            string sql = string.Format("update HOADON set Tongtien='{1}' where MaHoaDon='{0}'", maHD, tongtien);
+            db.ExecuteNonQuery(sql);
         }
     }
 }
