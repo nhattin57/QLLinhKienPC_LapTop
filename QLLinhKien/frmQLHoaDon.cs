@@ -257,6 +257,7 @@ namespace QLLinhKien
                 lk.updateHOADON(maHD, maKH, maNV, ngayXuatHD);
                 hienThiHoaDon();
                 MessageBox.Show("Chỉnh sửa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                setNut(true);
             }
             else
             {
@@ -279,6 +280,7 @@ namespace QLLinhKien
                     hienThiHoaDon();
                     hienThiCTHDTheoHoaDon(maHD);
                     MessageBox.Show("Chỉnh sửa Thành Công","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    setNut(true);
                 }
                 
             }
