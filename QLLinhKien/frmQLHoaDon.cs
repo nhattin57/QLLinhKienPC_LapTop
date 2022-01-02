@@ -352,6 +352,10 @@ namespace QLLinhKien
                 CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
                 string a = double.Parse(tongtien.ToString()).ToString("#,### VND", cul.NumberFormat);
                 txtTongTien.Text = a;
+                txtGiaBan.Text = "";
+                txtSoLuong.Text = "";
+                txtThanhTien.Text = "";
+                txtTenLK.Text = "";
                 hienThiCTHDTheoHoaDon(maHD);
                 hienThiHoaDon();
             }
