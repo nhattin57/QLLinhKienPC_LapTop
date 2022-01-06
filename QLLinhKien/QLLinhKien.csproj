@@ -74,6 +74,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="DataKhachHang.cs">
+      <DependentUpon>DataKhachHang.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataKhachHang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataKhachHang.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataNhanVien.cs">
+      <DependentUpon>DataNhanVien.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataNhanVien.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataNhanVien.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetCTHD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,6 +100,12 @@
     </Compile>
     <Compile Include="frmBanHang.Designer.cs">
       <DependentUpon>frmBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKhachHang.Designer.cs">
+      <DependentUpon>FrmKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNhaCungCap.cs">
       <SubType>Form</SubType>
@@ -121,6 +143,18 @@
     <Compile Include="frmReportCTHD.Designer.cs">
       <DependentUpon>frmReportCTHD.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReportKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportKhachHang.Designer.cs">
+      <DependentUpon>FrmReportKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportNhanVien.Designer.cs">
+      <DependentUpon>FrmReportNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="LinhKien.cs" />
     <Compile Include="model\CHUCVU.cs" />
     <Compile Include="model\CTHD.cs" />
@@ -141,6 +175,9 @@
     <EmbeddedResource Include="frmDamgNhap.resx">
       <DependentUpon>frmDamgNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmKhachHang.resx">
+      <DependentUpon>FrmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLinhKien.resx">
       <DependentUpon>frmLinhKien.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +193,12 @@
     <EmbeddedResource Include="frmReportCTHD.resx">
       <DependentUpon>frmReportCTHD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportKhachHang.resx">
+      <DependentUpon>FrmReportKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportNhanVien.resx">
+      <DependentUpon>FrmReportNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -166,6 +209,32 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ReportCTHD.rdlc" />
+    <EmbeddedResource Include="ReportKhachHang.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportNhanVien.rdlc" />
+    <None Include="DataKhachHang.xsc">
+      <DependentUpon>DataKhachHang.xsd</DependentUpon>
+    </None>
+    <None Include="DataKhachHang.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataKhachHang.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataKhachHang.xss">
+      <DependentUpon>DataKhachHang.xsd</DependentUpon>
+    </None>
+    <None Include="DataNhanVien.xsc">
+      <DependentUpon>DataNhanVien.xsd</DependentUpon>
+    </None>
+    <None Include="DataNhanVien.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataNhanVien.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataNhanVien.xss">
+      <DependentUpon>DataNhanVien.xsd</DependentUpon>
+    </None>
     <None Include="DataSetCTHD.xsc">
       <DependentUpon>DataSetCTHD.xsd</DependentUpon>
     </None>

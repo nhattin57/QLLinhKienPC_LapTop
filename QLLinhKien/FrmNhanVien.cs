@@ -195,5 +195,11 @@ namespace QLLinhKien
                 txtMatKhau.Text = dgvNhanVien.Rows[e.RowIndex].Cells[9].FormattedValue.ToString();
             }
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            FrmReportNhanVien frm = new FrmReportNhanVien();
+            frm.ShowDialog();
+        }
     }
 }

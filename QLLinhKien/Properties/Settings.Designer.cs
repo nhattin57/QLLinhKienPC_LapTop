@@ -33,5 +33,16 @@ namespace QLLinhKien.Properties {
                 return ((string)(this["QLLinhKienPC_LaptopConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-RCFES7K\\SQLEXPRESS;Initial Catalog=QLLinhKienPC_Laptop;Integr" +
+            "ated Security=True")]
+        public string QLLinhKienPC_LaptopConnectionString1 {
+            get {
+                return ((string)(this["QLLinhKienPC_LaptopConnectionString1"]));
+            }
+        }
     }
 }
