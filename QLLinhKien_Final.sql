@@ -156,5 +156,9 @@ click chuột không lo mòn tha hồ URF',5000000)
 insert into CTPNH values('PNH1','LK3',N'Màn Hình',N'Màn Hình AOE 2K5',N'Hàn QUốc',9999999,N'1,5 Năm',100,N'
 Màn cong xem chế độ 4k full hd không che',999999900)
 
-
+CREATE PROC TIMCTHDTheoMaHD(@MaHoaDon char(10))
+AS
+BEGIN
+SELECT *FROM CTHD WHERE MaHoaDon=@MaHoaDon
+END
 

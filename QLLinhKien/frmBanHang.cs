@@ -20,6 +20,7 @@ namespace QLLinhKien
         public string TenLKCoSLKoDu;
         public int SL_LK;
         public string maLKTrungTrongListView;
+        public static string maHDToReport = "";
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -314,6 +315,7 @@ namespace QLLinhKien
                     lk.themCTHD(maHD, maLK, tenLK, giaban, soluong, thanhTien);
                     lk.upDateSLLinhKien(soluong, maLK);
                 }
+                maHDToReport = maHD;
                 lvSPDuocChon.Items.Clear();
                 txtMaHD.Text = "";
                 txtSoLuong.Text = "";
@@ -341,6 +343,12 @@ namespace QLLinhKien
         {
             if (txtMaHD.Text.Length >9 && !char.IsControl(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void btnInHD_Click(object sender, EventArgs e)
+        {
+            frmReportCTHD frm = new frmReportCTHD();
+            frm.Show();
         }
     }
 }

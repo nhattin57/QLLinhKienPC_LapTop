@@ -406,6 +406,7 @@ namespace QLLinhKien
             this.btnInHD.TabIndex = 1;
             this.btnInHD.Text = "In Hóa Đơn";
             this.btnInHD.UseVisualStyleBackColor = true;
+            this.btnInHD.Click += new System.EventHandler(this.btnInHD_Click);
             // 
             // btnThanhToan
             // 
