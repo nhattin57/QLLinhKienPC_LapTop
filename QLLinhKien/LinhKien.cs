@@ -176,5 +176,48 @@ namespace QLLinhKien
             string sql = string.Format("update HOADON set Tongtien='{1}' where MaHoaDon='{0}'", maHD, tongtien);
             db.ExecuteNonQuery(sql);
         }
+
+        //from supplier
+        public DataTable loadDataSupplier()
+        {
+            string sql = "Select * from NhaCungCap";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public void insertSupplier(string ten, string diaChi, string SDT)
+        {
+            string sql = string.Format("insert into NHACUNGCAP values(N'{0}',N'{1}','{2}')", ten, diaChi, SDT);
+            db.ExecuteNonQuery(sql);
+        }
+
+        public void updateSupplier(string ten, string diaChi, string SDT, int maNCC)
+        {
+            string sql = string.Format("update NHACUNGCAP set TenNCC =N'{0}', DiaChi=N'{1}', SDT=N'{2}' where MaNCC = '{3}'", ten, diaChi, SDT, maNCC);
+            db.ExecuteNonQuery(sql);
+        }
+        public DataTable getLK(int MaNCC)
+        {
+            string sql = string.Format("select a.MaLinhKien from LinhKien a  where MaLinhKien ='{0}'", MaNCC);
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public DataTable viewSupplierSearch(string name)
+        {
+            string sql = string.Format("select MaNCC, TenNCC, SDT, DiaChi  from NHACUNGCAP  where TenNCC like  N'%{0}%' ", name);
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public DataTable getNameSupplier()
+        {
+            string sql = string.Format("Select TenNCC from NhaCungCap");
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public DataTable getNumberPhoneSupplier()
+        {
+            string sql = string.Format("Select SDT from NhaCungCap");
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
     }
 }
