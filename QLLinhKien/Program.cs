@@ -16,7 +16,7 @@ namespace QLLinhKien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmQLHoaDon());
+            Application.Run(new frmNhaCungCap());
         }
     }
 }
