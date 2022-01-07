@@ -219,5 +219,22 @@ namespace QLLinhKien
             DataTable dt = db.Execute(sql);
             return dt;
         }
+
+        public DataTable LayDSHoaDonChoDoanhThuHomNay()
+        {
+            DateTime now = DateTime.Now;
+            string ngay = string.Format("{0:MM/dd/yyyy}", now);
+            string sql = string.Format("select * from HOADON where NgayXuatHoaDon= '{0}'", ngay);
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+
+        public DataTable LayDSHoaDonChoDoanhThuTuNgayDenNgay(string tungay, string denngay)
+        {
+            string sql = string.Format("select * from HOADON where NgayXuatHoaDon between '{0}' and '{1}'", tungay, denngay);
+            DataTable dt = db.Execute(sql);
+            //Goi phuong thuc truy xuat DL
+            return dt;
+        }
     }
 }
