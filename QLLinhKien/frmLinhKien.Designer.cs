@@ -103,7 +103,7 @@ namespace QLLinhKien
             // 
             this.txtLoaiLK.Location = new System.Drawing.Point(50, 100);
             this.txtLoaiLK.Name = "txtLoaiLK";
-            this.txtLoaiLK.Size = new System.Drawing.Size(176, 24);
+            this.txtLoaiLK.Size = new System.Drawing.Size(176, 28);
             this.txtLoaiLK.TabIndex = 1;
             // 
             // cboTenNCC
@@ -111,21 +111,21 @@ namespace QLLinhKien
             this.cboTenNCC.FormattingEnabled = true;
             this.cboTenNCC.Location = new System.Drawing.Point(556, 96);
             this.cboTenNCC.Name = "cboTenNCC";
-            this.cboTenNCC.Size = new System.Drawing.Size(176, 26);
+            this.cboTenNCC.Size = new System.Drawing.Size(176, 30);
             this.cboTenNCC.TabIndex = 7;
             // 
             // txtBaoHanh
             // 
             this.txtBaoHanh.Location = new System.Drawing.Point(303, 148);
             this.txtBaoHanh.Name = "txtBaoHanh";
-            this.txtBaoHanh.Size = new System.Drawing.Size(176, 24);
+            this.txtBaoHanh.Size = new System.Drawing.Size(176, 28);
             this.txtBaoHanh.TabIndex = 5;
             // 
             // txtSLTon
             // 
             this.txtSLTon.Location = new System.Drawing.Point(556, 46);
             this.txtSLTon.Name = "txtSLTon";
-            this.txtSLTon.Size = new System.Drawing.Size(176, 24);
+            this.txtSLTon.Size = new System.Drawing.Size(176, 28);
             this.txtSLTon.TabIndex = 6;
             this.txtSLTon.TextChanged += new System.EventHandler(this.txtSLTon_TextChanged);
             this.txtSLTon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSLTon_KeyPress);
@@ -134,21 +134,21 @@ namespace QLLinhKien
             // 
             this.txtTenLK.Location = new System.Drawing.Point(50, 148);
             this.txtTenLK.Name = "txtTenLK";
-            this.txtTenLK.Size = new System.Drawing.Size(176, 24);
+            this.txtTenLK.Size = new System.Drawing.Size(176, 28);
             this.txtTenLK.TabIndex = 2;
             // 
             // txtXuatSu
             // 
             this.txtXuatSu.Location = new System.Drawing.Point(303, 46);
             this.txtXuatSu.Name = "txtXuatSu";
-            this.txtXuatSu.Size = new System.Drawing.Size(176, 24);
+            this.txtXuatSu.Size = new System.Drawing.Size(176, 28);
             this.txtXuatSu.TabIndex = 3;
             // 
             // txtGiaBan
             // 
             this.txtGiaBan.Location = new System.Drawing.Point(303, 96);
             this.txtGiaBan.Name = "txtGiaBan";
-            this.txtGiaBan.Size = new System.Drawing.Size(176, 24);
+            this.txtGiaBan.Size = new System.Drawing.Size(176, 28);
             this.txtGiaBan.TabIndex = 4;
             this.txtGiaBan.TextChanged += new System.EventHandler(this.txtGiaBan_TextChanged);
             this.txtGiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaBan_KeyPress);
@@ -157,7 +157,7 @@ namespace QLLinhKien
             // 
             this.txtMaLK.Location = new System.Drawing.Point(50, 46);
             this.txtMaLK.Name = "txtMaLK";
-            this.txtMaLK.Size = new System.Drawing.Size(176, 24);
+            this.txtMaLK.Size = new System.Drawing.Size(176, 28);
             this.txtMaLK.TabIndex = 0;
             // 
             // label3
@@ -166,7 +166,7 @@ namespace QLLinhKien
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(299, 73);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 20);
+            this.label3.Size = new System.Drawing.Size(89, 25);
             this.label3.TabIndex = 0;
             this.label3.Text = "Gíá Bán";
             // 
@@ -176,7 +176,7 @@ namespace QLLinhKien
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(299, 125);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 20);
+            this.label5.Size = new System.Drawing.Size(107, 25);
             this.label5.TabIndex = 0;
             this.label5.Text = "Bảo Hành";
             // 
@@ -186,7 +186,7 @@ namespace QLLinhKien
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(552, 73);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(151, 20);
+            this.label9.Size = new System.Drawing.Size(196, 25);
             this.label9.TabIndex = 0;
             this.label9.Text = "Tên Nhà Cung Cấp";
             // 
@@ -196,7 +196,7 @@ namespace QLLinhKien
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(552, 23);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 20);
+            this.label7.Size = new System.Drawing.Size(147, 25);
             this.label7.TabIndex = 0;
             this.label7.Text = "Số Lượng Tồn";
             // 
@@ -206,7 +206,7 @@ namespace QLLinhKien
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(299, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 20);
+            this.label4.Size = new System.Drawing.Size(88, 25);
             this.label4.TabIndex = 0;
             this.label4.Text = "Xuất Sứ";
             // 
@@ -216,7 +216,7 @@ namespace QLLinhKien
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(46, 125);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 20);
+            this.label8.Size = new System.Drawing.Size(147, 25);
             this.label8.TabIndex = 0;
             this.label8.Text = "Tên Kinh Kiện";
             // 
@@ -226,7 +226,7 @@ namespace QLLinhKien
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(46, 73);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 20);
+            this.label6.Size = new System.Drawing.Size(149, 25);
             this.label6.TabIndex = 0;
             this.label6.Text = "Loại Linh Kiện";
             // 
@@ -236,13 +236,13 @@ namespace QLLinhKien
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(46, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 20);
+            this.label2.Size = new System.Drawing.Size(138, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã Linh Kiện";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.txtTimKiemLK);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -256,7 +256,7 @@ namespace QLLinhKien
             this.txtTimKiemLK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiemLK.Location = new System.Drawing.Point(303, 14);
             this.txtTimKiemLK.Name = "txtTimKiemLK";
-            this.txtTimKiemLK.Size = new System.Drawing.Size(317, 27);
+            this.txtTimKiemLK.Size = new System.Drawing.Size(317, 31);
             this.txtTimKiemLK.TabIndex = 0;
             this.txtTimKiemLK.TextChanged += new System.EventHandler(this.txtTimKiemLK_TextChanged);
             // 
@@ -266,7 +266,7 @@ namespace QLLinhKien
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(139, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 24);
+            this.label1.Size = new System.Drawing.Size(181, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tìm Kiếm Nhanh:";
             // 
@@ -296,9 +296,9 @@ namespace QLLinhKien
             this.lsvLinhKien.FullRowSelect = true;
             this.lsvLinhKien.GridLines = true;
             this.lsvLinhKien.HideSelection = false;
-            this.lsvLinhKien.Location = new System.Drawing.Point(3, 20);
+            this.lsvLinhKien.Location = new System.Drawing.Point(3, 24);
             this.lsvLinhKien.Name = "lsvLinhKien";
-            this.lsvLinhKien.Size = new System.Drawing.Size(975, 222);
+            this.lsvLinhKien.Size = new System.Drawing.Size(975, 218);
             this.lsvLinhKien.TabIndex = 0;
             this.lsvLinhKien.UseCompatibleStateImageBehavior = false;
             this.lsvLinhKien.View = System.Windows.Forms.View.Details;
@@ -442,7 +442,7 @@ namespace QLLinhKien
             // 
             // frmLinhKien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 534);
             this.Controls.Add(this.flowLayoutPanel1);
