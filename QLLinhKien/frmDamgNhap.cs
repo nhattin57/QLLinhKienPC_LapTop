@@ -42,7 +42,7 @@ namespace QLLinhKien
             else if (kiemTraTkMk(txtTaiKhoan.Text,txtMatKhau.Text) == true)
             {
                 this.Hide();
-                frmBanHang frm = new frmBanHang();
+                FrmMain frm = new FrmMain();
                 frm.Show();
             }
             else
@@ -65,8 +65,10 @@ namespace QLLinhKien
 
         private void chkHienThiMK_CheckedChanged(object sender, EventArgs e)
         {
-            if(chkHienThiMK.Checked==true)
-                txtMatKhau.PasswordChar= '\0'; 
+            if (chkHienThiMK.Checked == true)
+                txtMatKhau.PasswordChar = '\0';
+            else
+                txtMatKhau.PasswordChar = '*';
         }
     }
 }

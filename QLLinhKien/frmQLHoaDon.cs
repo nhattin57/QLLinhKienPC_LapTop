@@ -212,7 +212,10 @@ namespace QLLinhKien
         }
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            hienThiHoaDonTheoMa(txtTimKiem.Text);
+            if (txtTimKiem.Text.Length > 0)
+                hienThiHoaDonTheoMa(txtTimKiem.Text);
+            else
+                hienThiHoaDon();
         }
         void resetTextBox()
         {
@@ -281,6 +284,7 @@ namespace QLLinhKien
                     hienThiCTHDTheoHoaDon(maHD);
                     MessageBox.Show("Chỉnh sửa Thành Công","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     setNut(true);
+                    closeTextBox_CBB(true);
                 }
                 
             }
