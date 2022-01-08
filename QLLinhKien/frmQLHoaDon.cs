@@ -261,6 +261,7 @@ namespace QLLinhKien
                 hienThiHoaDon();
                 MessageBox.Show("Chỉnh sửa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 setNut(true);
+                closeTextBox_CBB(true);
             }
             else
             {
