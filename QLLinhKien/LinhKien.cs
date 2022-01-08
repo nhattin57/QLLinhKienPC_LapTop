@@ -241,5 +241,119 @@ namespace QLLinhKien
             //Goi phuong thuc truy xuat DL
             return dt;
         }
+        public DataTable loadDataPNH()
+        {
+            string sql = "select MaPNH,c.TenNCC,b.HoTen,NgayNhapHang,Tongtien from PhieuNhapHang a,NHANVIEN b,NHACUNGCAP c where a.MaNCC=c.MaNCC and a.MANV=b.MANV";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public DataTable loadDataChiTietPNH()
+        {
+            string sql = "Select * from CTPNH";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public DataTable layMavaTenNCC()
+        {
+            string sql = "Select a.MaNCC, a.TenNCC from NHACUNGCAP a";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public DataTable LaymaPNH()
+        {
+            string sql = "Select MaPNH from PhieuNhapHang";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public DataTable TimCTPNHTheoMaPNH(string maPNH)
+        {
+            string sql = string.Format("select  a.MaLinhKien, a.LoaiLinhKien, a.TenLinhKien, a.XuatSu, a.GiaBan, a.BaoHanh, a.SoLuongNhap, a.ThanhTien from CTPNH a , LinhKien  b where a.MaLinhKien = b.MaLinhKien and MaPNH ='{0}'", maPNH);
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+
+        public DataTable layTTNhanVien()
+        {
+            string sql = "Select *from NhanVien";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public DataTable layTTNhaCungCap()
+        {
+            string sql = "Select *from NhaCungCap";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+
+        public DataTable timPNHtheoMa(string maPNH)
+        {
+            string sql = string.Format("select MaPNH,c.TenNCC,b.HoTen,NgayNhapHang,Tongtien from PhieuNhapHang a,NHANVIEN b,NHACUNGCAP c where a.MaNCC=c.MaNCC and a.MANV=b.MANV and MaPNH='{0}'", maPNH);
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public void themMoiPNH(string maPNH, int maNV, int maNCC, string ngaynhap, double tongtien)
+        {
+            string sql = string.Format("insert PhieuNhapHang values('{0}','{1}','{2}','{3}','{4}')", maPNH, maNV, maNCC, ngaynhap, tongtien);
+            db.ExecuteNonQuery(sql);
+        }
+        public void themCTHDPhieuNH(string maPNH, string maLK, string loai, string tenLK, string xuatxu, double giaBan, string baohanh, int soluong, double thanhtien)
+        {
+            string sql = string.Format("insert into CTPNH  values ('{0}','{1}',N'{2}',N'{3}',N'{4}','{5}','N{6}','{7}','{8}')", maPNH, maLK, loai, tenLK, xuatxu, giaBan, baohanh, soluong, thanhtien);
+            db.ExecuteNonQuery(sql);
+        }
+
+        //quản lý phiếu nhập hàng
+        public DataTable timPNH()
+        {
+            string sql = "select MaPNH from PhieuNhapHang";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+        public void deleteCTPNH(string maPNH)
+        {
+            string sql = string.Format("delete CTPNH where MaPNH='{0}'", maPNH);
+            db.ExecuteNonQuery(sql);
+        }
+        public void deletePhieuNH(string maPNH)
+        {
+            string sql = string.Format("delete PhieuNhapHang where MaPNH='{0}'", maPNH);
+            db.ExecuteNonQuery(sql);
+        }
+        public void deleteCTPNHwhenDoubleClickonListView(string maPNH, string maLK)
+        {
+            string sql = string.Format("delete CTPNH where MaPNH='{0}' and MaLinhKien='{1}'", maPNH, maLK);
+            db.ExecuteNonQuery(sql);
+        }
+        public void updatePNHwhendoubleClickonListView(string maPNH, double tongtien)
+        {
+            string sql = string.Format("update PhieuNhapHang set Tongtien='{1}' where MaPNH='{0}'", maPNH, tongtien);
+            db.ExecuteNonQuery(sql);
+        }
+
+        public void updatePhieuNhapHang(string maPNH, int maNCC, int maNV, string ngayxuatHD)
+        {
+            string sql = string.Format("update PhieuNhapHang set MaNCC='{1}',MANV='{2}',NgayXuatHoaDon='{3}' where MaHoaDon='{0}'", maPNH, maNCC, maNV, ngayxuatHD);
+            db.ExecuteNonQuery(sql);
+        }
+        public void updateCTPhieuNhapHang(string maPNH, string maLK, string loai, string tenlk, string xuatxu, double giaban, string baohanh, int soluong, double thanhtien)
+        {
+            string sql = string.Format("update CTPNH set LoaiLinhKien=N'{2}',TenLinhKien=N'{3}',XuatSu=N'{4}', GiaBan='{5}', BaoHanh = '{6}',SoLuongNhap='{7}',ThanhTien='{8}' where MaPNH='{0}' and MaLinhKien='{1}'", maPNH, maLK, loai, tenlk, xuatxu, giaban, baohanh, soluong, thanhtien);
+            db.ExecuteNonQuery(sql);
+        }
+
+        public void updateHOADONBeforeCTHDphieuNhaphang(string maHD, int maNCC, int maNV, string ngayxuatHD, double tongtien)
+        {
+            string sql = string.Format("update PhieuNhapHang set MaNCC='{1}',MANV='{2}',NgayNhapHang='{3}',Tongtien='{4}' where MaPNH='{0}'", maHD, maNCC, maNV, ngayxuatHD, tongtien);
+            db.ExecuteNonQuery(sql);
+        }
+
+        public DataTable layThanhTienTuCTPhieunhaphang(string maPNH)
+        {
+            string sql = string.Format("select ThanhTien from CTPNH where MaPNH='{0}'", maPNH);
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
+
+        //
     }
 }
