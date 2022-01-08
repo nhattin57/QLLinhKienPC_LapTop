@@ -29,7 +29,7 @@ namespace QLLinhKien
             DataTable dt = lk.LayDSHoaDonChoDoanhThuHomNay();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                tongtien = long.Parse(dt.Rows[i][5].ToString());
+                tongtien = long.Parse(dt.Rows[i][4].ToString());
                 tongDoanhThu += tongtien;
             }
             return tongDoanhThu;
@@ -100,14 +100,25 @@ namespace QLLinhKien
             txtTongDoanhThu.Text = totalDoanhThu.ToString();
         }
 
-        private void txtTongDoanhThu_TextChanged(object sender, EventArgs e)
+        private void btnExcel_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+            app.Visible = true;
+            Microsoft.Office.Interop.Excel.Workbook wb = app.Workbooks.Add(1);
+            Microsoft.Office.Interop.Excel.Worksheet ws = (Microsoft.Office.Interop.Excel.Worksheet)wb.Worksheets[1];
+            int i = 1;
+            int i2 = 1;
+            foreach (ListViewItem lvi in lsvDoanhThu.Items)
+            {
+                i = 1;
+                foreach (ListViewItem.ListViewSubItem lvs in lvi.SubItems)
+                {
+                    ws.Cells[i2, i] = lvs.Text;
+                    i++;
+                }
+                i2++;
+            }
         }
     }
 }

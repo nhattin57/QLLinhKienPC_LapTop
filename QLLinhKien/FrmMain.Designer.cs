@@ -84,7 +84,7 @@ namespace QLLinhKien
             this.btnclose.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnclose.Size = new System.Drawing.Size(280, 80);
             this.btnclose.TabIndex = 9;
-            this.btnclose.Text = "   Thoát";
+            this.btnclose.Text = "       Thoát";
             this.btnclose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnclose.UseVisualStyleBackColor = true;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
@@ -103,7 +103,7 @@ namespace QLLinhKien
             this.btnTK.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnTK.Size = new System.Drawing.Size(280, 80);
             this.btnTK.TabIndex = 8;
-            this.btnTK.Text = "   Thống kê";
+            this.btnTK.Text = "    Thống kê";
             this.btnTK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTK.UseVisualStyleBackColor = true;
             this.btnTK.Click += new System.EventHandler(this.btnTK_Click);
@@ -122,7 +122,7 @@ namespace QLLinhKien
             this.btnBH.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnBH.Size = new System.Drawing.Size(280, 80);
             this.btnBH.TabIndex = 7;
-            this.btnBH.Text = "   Bán hàng";
+            this.btnBH.Text = "    Bán hàng";
             this.btnBH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBH.UseVisualStyleBackColor = true;
             this.btnBH.Click += new System.EventHandler(this.btnBH_Click);
@@ -141,7 +141,7 @@ namespace QLLinhKien
             this.btnNCC.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnNCC.Size = new System.Drawing.Size(280, 80);
             this.btnNCC.TabIndex = 6;
-            this.btnNCC.Text = "   Nhà cung cấp";
+            this.btnNCC.Text = "    Nhà cung cấp";
             this.btnNCC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNCC.UseVisualStyleBackColor = true;
             this.btnNCC.Click += new System.EventHandler(this.btnNCC_Click);
@@ -160,7 +160,7 @@ namespace QLLinhKien
             this.btnLK.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnLK.Size = new System.Drawing.Size(280, 80);
             this.btnLK.TabIndex = 5;
-            this.btnLK.Text = "   Linh kiện";
+            this.btnLK.Text = "    Linh kiện";
             this.btnLK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLK.UseVisualStyleBackColor = true;
             this.btnLK.Click += new System.EventHandler(this.btnLK_Click);
@@ -216,7 +216,7 @@ namespace QLLinhKien
             this.btnQLNV.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnQLNV.Size = new System.Drawing.Size(280, 80);
             this.btnQLNV.TabIndex = 2;
-            this.btnQLNV.Text = "   Quản lý nhân viên";
+            this.btnQLNV.Text = "    Quản lý nhân viên";
             this.btnQLNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQLNV.UseVisualStyleBackColor = true;
             this.btnQLNV.Click += new System.EventHandler(this.btnQLNV_Click);
@@ -296,7 +296,7 @@ namespace QLLinhKien
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(80, 197);
+            this.label2.Location = new System.Drawing.Point(73, 265);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(1204, 55);
             this.label2.TabIndex = 0;

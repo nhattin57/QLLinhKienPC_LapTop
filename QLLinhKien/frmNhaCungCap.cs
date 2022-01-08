@@ -288,5 +288,15 @@ namespace QLLinhKien
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNameSupplier_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -120,15 +120,16 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnclose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAaZJREFUWEfN2U1uwjAQBeAsCHCAnCAkwKaUQv/uw5HbC3TLb5G6b9+LMhWlnrQY
-        x5knWTKeYn8KahxMkmXZKk3Tj36//1YUxXPScWighSbaEnS2GP9k6/V6xy6RXBueI7qVp7INBoMXGagH
-        O0Ge49gq22QyucElXZ8W8IfvMZEuHF6vaWO9QnJAimxElmX5xHqb4RpcC103TlIjN+hGQ/4bJxmPx7NY
-        SAW3oYF1NQ3IR9ZDhHN54SRtIq/GSTDRrQN5wEQPrPukxh3Q/YHjWqxfnBr5fSNn80XyPUFxkhBIBbe9
-        GifBRHNfZANuznqwaEjcs+5Zd4W1KDiJgtznef4LWeP26MbBSbBv3mGhHboqUsPxvay3Hg05Go2W0+l0
-        6cDtouEkGtIEToKrtThHnjbWcFUX6HcXDWkCx5gGmv6ITf+TaDgTtxkNZ+JGrW11rv04+lan4Gw8LPjg
-        JK0/bmEiuw+sIXCS4MgaZ/NLExB2v3a2iZN4I2PgJJjzsqOPBlz3h0ccYAHdaDjJn0gNh30z9gGmGzkc
-        Ds0eAcP2av8Q3fbPENnqC0g4yYymh+WcAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAlCAYAAABVjVnMAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAcNJREFUWEft1j1IVXEYx/FrapmIoeEriW8QSQQiJCQIiji4OImTuyCioCi4KTgE
+        tSnRFDkKhhgFTuIQNCRB0BKC5WISCYoviGD5/cIN5A7Xew/nhMP5wWc5XM7/nP/z/J9zE3HixLmOuYF7
+        6EYPbuO/5AmW8BZDKELkacMXvMFjFCDyNGMLX3EfbnnWacQCPmECd5AuVfBNz9COHARKJ8pgjX5hHd6w
+        EKk39aGs6QnGvBBWHmIF3/ECLfi3uI0zjT28RD5Ci4u49XPYxwYGcAu98IFWUYNIUoERuPU7eI01bKML
+        uYgsDgNr7VvaSJpHKSKPx8Qt/pv0DFd1fSix5k/xB6fYxSRKEGnsapvMYTGKdzjEMhyXNxF6rKUdfA4X
+        9e1rMQXr/gMOnHKEmnEcwcWLvZCMg6UDvv0BXuEBUodNoDThM9zmR15IiYtUYhb+5iM8ZnkIHDt5Bsdw
+        UqW7mdPM7Xaa+QDPEbjuvu0HWMd6XDUsHJ39+AbP+ntcLk1GcZFBWNtNLKIVmcRp5zn/Cf8YZNV0nk8/
+        7L/hvG5ANk1jmfrgR8Rvdsaphls1jLsI2qkexazmufWqg0cmTpw4cVKSSFwAen5Qo2s79/QAAAAASUVO
+        RK5CYII=
 </value>
   </data>
   <data name="btnTK.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -49,10 +49,10 @@ namespace QLLinhKien
             // button1
             // 
             this.button1.AutoSize = true;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(372, 382);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1468, 24);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 55);
+            this.button1.Size = new System.Drawing.Size(113, 55);
             this.button1.TabIndex = 0;
             this.button1.Text = "Thống kê";
             this.button1.UseVisualStyleBackColor = true;
@@ -71,7 +71,7 @@ namespace QLLinhKien
             this.lsvDoanhThu.FullRowSelect = true;
             this.lsvDoanhThu.GridLines = true;
             this.lsvDoanhThu.HideSelection = false;
-            this.lsvDoanhThu.Location = new System.Drawing.Point(12, 13);
+            this.lsvDoanhThu.Location = new System.Drawing.Point(34, 13);
             this.lsvDoanhThu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lsvDoanhThu.Name = "lsvDoanhThu";
             this.lsvDoanhThu.Size = new System.Drawing.Size(1063, 349);
@@ -108,55 +108,56 @@ namespace QLLinhKien
             // btnExcel
             // 
             this.btnExcel.AutoSize = true;
-            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcel.Location = new System.Drawing.Point(961, 379);
+            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.Location = new System.Drawing.Point(951, 379);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(114, 55);
+            this.btnExcel.Size = new System.Drawing.Size(126, 55);
             this.btnExcel.TabIndex = 2;
-            this.btnExcel.Text = "Xuất excel";
+            this.btnExcel.Text = "Xuất Excel";
             this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnDoanhthuHN
             // 
             this.btnDoanhthuHN.AutoSize = true;
-            this.btnDoanhthuHN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoanhthuHN.Location = new System.Drawing.Point(504, 382);
+            this.btnDoanhthuHN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoanhthuHN.Location = new System.Drawing.Point(682, 379);
             this.btnDoanhthuHN.Name = "btnDoanhthuHN";
-            this.btnDoanhthuHN.Size = new System.Drawing.Size(192, 55);
+            this.btnDoanhthuHN.Size = new System.Drawing.Size(223, 55);
             this.btnDoanhthuHN.TabIndex = 3;
-            this.btnDoanhthuHN.Text = "Doanh thu hôm nay";
+            this.btnDoanhthuHN.Text = "Doanh Thu Hôm Nay";
             this.btnDoanhthuHN.UseVisualStyleBackColor = true;
             this.btnDoanhthuHN.Click += new System.EventHandler(this.btnDoanhthuHN_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 492);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(28, 385);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(242, 36);
+            this.label1.Size = new System.Drawing.Size(258, 36);
             this.label1.TabIndex = 4;
             this.label1.Text = "Tổng doanh thu :";
             // 
             // txtTongDoanhThu
             // 
-            this.txtTongDoanhThu.Location = new System.Drawing.Point(260, 492);
+            this.txtTongDoanhThu.Location = new System.Drawing.Point(292, 387);
             this.txtTongDoanhThu.Multiline = true;
             this.txtTongDoanhThu.Name = "txtTongDoanhThu";
-            this.txtTongDoanhThu.Size = new System.Drawing.Size(199, 36);
+            this.txtTongDoanhThu.Size = new System.Drawing.Size(207, 36);
             this.txtTongDoanhThu.TabIndex = 5;
-            this.txtTongDoanhThu.TextChanged += new System.EventHandler(this.txtTongDoanhThu_TextChanged);
             // 
             // dtpTuNgay
             // 
-            this.dtpTuNgay.Location = new System.Drawing.Point(127, 379);
+            this.dtpTuNgay.Location = new System.Drawing.Point(1251, 14);
             this.dtpTuNgay.Name = "dtpTuNgay";
             this.dtpTuNgay.Size = new System.Drawing.Size(200, 26);
             this.dtpTuNgay.TabIndex = 6;
             // 
             // dtpDenNgay
             // 
-            this.dtpDenNgay.Location = new System.Drawing.Point(127, 411);
+            this.dtpDenNgay.Location = new System.Drawing.Point(1251, 67);
             this.dtpDenNgay.Name = "dtpDenNgay";
             this.dtpDenNgay.Size = new System.Drawing.Size(200, 26);
             this.dtpDenNgay.TabIndex = 7;
@@ -164,21 +165,20 @@ namespace QLLinhKien
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 380);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1115, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 25);
+            this.label2.Size = new System.Drawing.Size(104, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "Từ ngày :";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 412);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1115, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 25);
+            this.label3.Size = new System.Drawing.Size(117, 25);
             this.label3.TabIndex = 9;
             this.label3.Text = "Đến ngày :";
             // 
@@ -186,7 +186,7 @@ namespace QLLinhKien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1099, 612);
+            this.ClientSize = new System.Drawing.Size(1740, 564);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpDenNgay);
