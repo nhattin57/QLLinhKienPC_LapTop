@@ -159,6 +159,17 @@ namespace QLLinhKien
             }
             return true;
         }
+        bool kiemTraTenNCC(string tenNCC)
+        {
+            DataTable dt = lk.layTenNCC();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string tenNCCtemp = dt.Rows[i][0].ToString().Trim();
+                if (tenNCCtemp.Equals(tenNCC.Trim()))
+                    return true;
+            }
+            return false;
+        }
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (themmoi == true)
@@ -172,6 +183,10 @@ namespace QLLinhKien
                 else if(kiemTraTrungMaLK(txtMaLK.Text)==true)
                 {
                     MessageBox.Show("Mã Linh Kiện Đã Tồn Tại Vui Lòng Nhập Mã Khác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (kiemTraTenNCC(cboTenNCC.Text)==false)
+                {
+                    MessageBox.Show("Vui lòng chọn nhà cung cấp trong danh sách", "Thông Báo", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
                 else
                 {

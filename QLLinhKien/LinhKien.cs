@@ -176,7 +176,12 @@ namespace QLLinhKien
             string sql = string.Format("update HOADON set Tongtien='{1}' where MaHoaDon='{0}'", maHD, tongtien);
             db.ExecuteNonQuery(sql);
         }
-
+        public DataTable layTenNCC()
+        {
+            string sql = "select TenNCC from NHACUNGCAP";
+            DataTable dt = db.Execute(sql);
+            return dt;
+        }
         //from supplier
         public DataTable loadDataSupplier()
         {
