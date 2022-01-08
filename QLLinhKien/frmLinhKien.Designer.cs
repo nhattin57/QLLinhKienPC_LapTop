@@ -451,7 +451,7 @@ namespace QLLinhKien
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmLinhKien";
-            this.Text = "Linh Kiện";
+            this.Text = "LINH KIỆN";
             this.Load += new System.EventHandler(this.frmLinhKien_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

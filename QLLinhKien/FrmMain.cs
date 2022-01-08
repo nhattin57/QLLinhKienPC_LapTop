@@ -159,9 +159,19 @@ namespace QLLinhKien
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnclose_Click(object sender, EventArgs e)
+        private void btnclose_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnQLPNH_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmQLphieuNhapHang(), sender);
+        }
+
+        private void btnPNH_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmPhieuNhapHang(), sender);
         }
     }
 }

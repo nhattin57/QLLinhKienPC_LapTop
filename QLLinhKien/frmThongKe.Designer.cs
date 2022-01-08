@@ -198,7 +198,7 @@ namespace QLLinhKien
             this.Controls.Add(this.lsvDoanhThu);
             this.Controls.Add(this.button1);
             this.Name = "frmThongKe";
-            this.Text = "Thống Kê";
+            this.Text = "THỐNG KÊ";
             this.ResumeLayout(false);
             this.PerformLayout();
 

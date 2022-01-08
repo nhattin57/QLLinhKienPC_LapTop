@@ -31,7 +31,6 @@ namespace QLLinhKien
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnclose = new System.Windows.Forms.Button();
             this.btnTK = new System.Windows.Forms.Button();
             this.btnBH = new System.Windows.Forms.Button();
             this.btnNCC = new System.Windows.Forms.Button();
@@ -46,6 +45,9 @@ namespace QLLinhKien
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnQLPNH = new System.Windows.Forms.Button();
+            this.btnPNH = new System.Windows.Forms.Button();
+            this.btnclose = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -56,6 +58,8 @@ namespace QLLinhKien
             // 
             this.panelMenu.BackColor = System.Drawing.Color.Gray;
             this.panelMenu.Controls.Add(this.btnclose);
+            this.panelMenu.Controls.Add(this.btnPNH);
+            this.panelMenu.Controls.Add(this.btnQLPNH);
             this.panelMenu.Controls.Add(this.btnTK);
             this.panelMenu.Controls.Add(this.btnBH);
             this.panelMenu.Controls.Add(this.btnNCC);
@@ -67,27 +71,8 @@ namespace QLLinhKien
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(280, 758);
+            this.panelMenu.Size = new System.Drawing.Size(280, 901);
             this.panelMenu.TabIndex = 0;
-            // 
-            // btnclose
-            // 
-            this.btnclose.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnclose.FlatAppearance.BorderSize = 0;
-            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclose.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
-            this.btnclose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnclose.Location = new System.Drawing.Point(0, 640);
-            this.btnclose.Name = "btnclose";
-            this.btnclose.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnclose.Size = new System.Drawing.Size(280, 80);
-            this.btnclose.TabIndex = 9;
-            this.btnclose.Text = "       Thoát";
-            this.btnclose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnclose.UseVisualStyleBackColor = true;
-            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // btnTK
             // 
@@ -252,7 +237,7 @@ namespace QLLinhKien
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(280, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1308, 80);
+            this.panelTitleBar.Size = new System.Drawing.Size(1346, 80);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -275,7 +260,7 @@ namespace QLLinhKien
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitle.Location = new System.Drawing.Point(571, 21);
+            this.lblTitle.Location = new System.Drawing.Point(590, 21);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(207, 41);
             this.lblTitle.TabIndex = 0;
@@ -287,7 +272,7 @@ namespace QLLinhKien
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPane.Location = new System.Drawing.Point(280, 80);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(1308, 678);
+            this.panelDesktopPane.Size = new System.Drawing.Size(1346, 821);
             this.panelDesktopPane.TabIndex = 2;
             // 
             // label2
@@ -296,17 +281,74 @@ namespace QLLinhKien
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(73, 265);
+            this.label2.Location = new System.Drawing.Point(92, 336);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(1204, 55);
             this.label2.TabIndex = 0;
             this.label2.Text = "XIN CHÀO QUÝ KHÁCH ĐẾN VỚI QUÁN TỨ ĐẠI ANH HÀO";
             // 
+            // btnQLPNH
+            // 
+            this.btnQLPNH.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnQLPNH.FlatAppearance.BorderSize = 0;
+            this.btnQLPNH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLPNH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLPNH.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnQLPNH.Image = ((System.Drawing.Image)(resources.GetObject("btnQLPNH.Image")));
+            this.btnQLPNH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLPNH.Location = new System.Drawing.Point(0, 640);
+            this.btnQLPNH.Name = "btnQLPNH";
+            this.btnQLPNH.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnQLPNH.Size = new System.Drawing.Size(280, 80);
+            this.btnQLPNH.TabIndex = 9;
+            this.btnQLPNH.Text = "   Quản lý phiếu nhập hàng";
+            this.btnQLPNH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQLPNH.UseVisualStyleBackColor = true;
+            this.btnQLPNH.Click += new System.EventHandler(this.btnQLPNH_Click);
+            // 
+            // btnPNH
+            // 
+            this.btnPNH.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPNH.FlatAppearance.BorderSize = 0;
+            this.btnPNH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPNH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPNH.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPNH.Image = ((System.Drawing.Image)(resources.GetObject("btnPNH.Image")));
+            this.btnPNH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPNH.Location = new System.Drawing.Point(0, 720);
+            this.btnPNH.Name = "btnPNH";
+            this.btnPNH.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnPNH.Size = new System.Drawing.Size(280, 80);
+            this.btnPNH.TabIndex = 10;
+            this.btnPNH.Text = "    Phiếu nhập hàng";
+            this.btnPNH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPNH.UseVisualStyleBackColor = true;
+            this.btnPNH.Click += new System.EventHandler(this.btnPNH_Click);
+            // 
+            // btnclose
+            // 
+            this.btnclose.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnclose.FlatAppearance.BorderSize = 0;
+            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnclose.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
+            this.btnclose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnclose.Location = new System.Drawing.Point(0, 800);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnclose.Size = new System.Drawing.Size(280, 80);
+            this.btnclose.TabIndex = 11;
+            this.btnclose.Text = "    Thoát";
+            this.btnclose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnclose.UseVisualStyleBackColor = true;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click_1);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1588, 758);
+            this.ClientSize = new System.Drawing.Size(1626, 901);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -343,5 +385,7 @@ namespace QLLinhKien
         private System.Windows.Forms.Button btnCloseChildForm;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnclose;
+        private System.Windows.Forms.Button btnPNH;
+        private System.Windows.Forms.Button btnQLPNH;
     }
 }

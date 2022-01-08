@@ -15,7 +15,7 @@ namespace QLLinhKien
         //tu thay data soure= ten may cua minh de chay duoc
         public Database()
         {
-             string strCnn = "Data Source=DESKTOP-8I56L51;Initial Catalog=QLLinhKienPC_Laptop;Integrated Security=True";
+             string strCnn = @"Data Source=.\MSSQLSERVER01;Initial Catalog=QLLinhKienPC_Laptop;Integrated Security=True";
            // string strCnn = @"Data Source=DESKTOP-FNPS5K6;Initial Catalog=QLLinhKienPC_Laptop;UID-sa;PWD=123456; Integrated Security=True";
             sqlConn = new SqlConnection(strCnn);
         }

@@ -283,5 +283,7 @@ namespace QLLinhKien
         {
             this.Close();
         }
+
+       
     }
 }

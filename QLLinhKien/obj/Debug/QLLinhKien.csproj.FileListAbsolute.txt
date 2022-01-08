@@ -573,3 +573,5 @@ C:\Users\DELL\Desktop\New folder (2)\QLLinhKienPC_LapTop\QLLinhKien\obj\Debug\QL
 C:\Users\DELL\Desktop\New folder (2)\QLLinhKienPC_LapTop\QLLinhKien\obj\Debug\QLLinhKien.csproj.CopyComplete
 C:\Users\DELL\Desktop\New folder (2)\QLLinhKienPC_LapTop\QLLinhKien\obj\Debug\QLLinhKien.exe
 C:\Users\DELL\Desktop\New folder (2)\QLLinhKienPC_LapTop\QLLinhKien\obj\Debug\QLLinhKien.pdb
+D:\QLLINHKIEN\QLLinhKienPC_LapTop\QLLinhKien\obj\Debug\QLLinhKien.frmPhieuNhapHang.resources
+D:\QLLINHKIEN\QLLinhKienPC_LapTop\QLLinhKien\obj\Debug\QLLinhKien.frmQLphieuNhapHang.resources
