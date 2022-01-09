@@ -665,3 +665,4 @@ C:\Users\DELL\Desktop\QLLK\QLLinhKienPC_LapTop\QLLinhKien\bin\Debug\ru\Microsoft
 C:\Users\DELL\Desktop\QLLK\QLLinhKienPC_LapTop\QLLinhKien\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\DELL\Desktop\QLLK\QLLinhKienPC_LapTop\QLLinhKien\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\DELL\Desktop\QLLK\QLLinhKienPC_LapTop\QLLinhKien\obj\Debug\QLLinhKien.csproj.CopyComplete
+C:\Users\DELL\Desktop\QLLK\QLLinhKienPC_LapTop\QLLinhKien\obj\Debug\QLLinhKien.csproj.AssemblyReference.cache
