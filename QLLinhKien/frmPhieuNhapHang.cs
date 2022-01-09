@@ -284,6 +284,10 @@ namespace QLLinhKien
             this.Close();
         }
 
-       
+        private void btnInHD_Click(object sender, EventArgs e)
+        {
+            frmReportQuanlyLK s = new frmReportQuanlyLK();
+            s.Show();
+        }
     }
 }
