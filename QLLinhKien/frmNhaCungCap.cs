@@ -205,7 +205,7 @@ namespace QLLinhKien
                             MessageBox.Show($"Nhà cung cấp có tên: {txtNameSupplier.Text} đã tồn tại. Vui lòng chọn tên nhà cung cấp mới!!!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             txtNameSupplier.Focus();
                         }
-                        else if (checkNumberPhoneSupplier(txtNumberPhone.Text) == false)
+                        else if (checkNumberPhoneSupplier(txtNumberPhone.Text) == true)
                         {
                             MessageBox.Show($"Nhà cung cấp có số điện thoại: {txtNumberPhone.Text.Trim()} đã tồn tại. Vui lòng chọn số điện thoại mới!!!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             txtNumberPhone.Focus();

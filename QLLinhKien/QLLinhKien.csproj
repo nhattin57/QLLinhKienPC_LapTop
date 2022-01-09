@@ -58,7 +58,7 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -96,6 +96,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetCTHD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetNhapLK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetNhapLK.xsd</DependentUpon>
     </Compile>
     <Compile Include="frmBanHang.cs">
       <SubType>Form</SubType>
@@ -175,6 +180,12 @@
     <Compile Include="FrmReportNhanVien.Designer.cs">
       <DependentUpon>FrmReportNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportQuanlyLK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportQuanlyLK.Designer.cs">
+      <DependentUpon>frmReportQuanlyLK.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +209,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QLLinhKienPC_LaptopDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLLinhKienPC_LaptopDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ThemColor.cs" />
@@ -240,6 +256,9 @@
     <EmbeddedResource Include="FrmReportNhanVien.resx">
       <DependentUpon>FrmReportNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportQuanlyLK.resx">
+      <DependentUpon>frmReportQuanlyLK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +272,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportNhanVien.rdlc" />
+    <EmbeddedResource Include="ReportPhieuNhapLK.rdlc" />
     <None Include="DataKhachHang.xsc">
       <DependentUpon>DataKhachHang.xsd</DependentUpon>
     </None>
@@ -286,6 +306,17 @@
     <None Include="DataSetCTHD.xss">
       <DependentUpon>DataSetCTHD.xsd</DependentUpon>
     </None>
+    <None Include="DataSetNhapLK.xsc">
+      <DependentUpon>DataSetNhapLK.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetNhapLK.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetNhapLK.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetNhapLK.xss">
+      <DependentUpon>DataSetNhapLK.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -296,6 +327,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLLinhKienPC_LaptopDataSet.xsc">
+      <DependentUpon>QLLinhKienPC_LaptopDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLLinhKienPC_LaptopDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLLinhKienPC_LaptopDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLLinhKienPC_LaptopDataSet.xss">
+      <DependentUpon>QLLinhKienPC_LaptopDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

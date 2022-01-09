@@ -44,5 +44,16 @@ namespace QLLinhKien.Properties {
                 return ((string)(this["QLLinhKienPC_LaptopConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-8I56L51;Initial Catalog=QLLinhKienPC_Laptop;Integrated Securi" +
+            "ty=True")]
+        public string QLLinhKienPC_LaptopConnectionString2 {
+            get {
+                return ((string)(this["QLLinhKienPC_LaptopConnectionString2"]));
+            }
+        }
     }
 }
