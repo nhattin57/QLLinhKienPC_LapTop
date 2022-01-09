@@ -35,8 +35,6 @@ namespace QLLinhKien.model
 
         public int? SoLuongNhap { get; set; }
 
-        public string MoTaSp { get; set; }
-
         public long? ThanhTien { get; set; }
 
         public virtual LinhKien LinhKien { get; set; }

@@ -143,6 +143,11 @@ namespace QLLinhKien
                         double thanhtien = giaban * tongsl;
                         lvSPDuocChon.Items[i].SubItems[3].Text = tongsl.ToString();
                         lvSPDuocChon.Items[i].SubItems[4].Text = thanhtien.ToString();
+                        tinhTongTienTrongLV();
+                        txtTongTien.Text = tinhTongTienTrongLV().ToString();
+                        CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+                        string a = double.Parse(txtTongTien.Text).ToString("#,### VND", cul.NumberFormat);
+                        txtTongTien.Text = a;
                     }
                 }
             }
@@ -157,6 +162,7 @@ namespace QLLinhKien
                 double thanhtien = sl * giaban;
                 lvi.SubItems.Add(thanhtien.ToString());
                 double tongtien = tinhTongTienTrongLV();
+
                 txtTongTien.Text = tongtien.ToString();
                 CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
                 string a = double.Parse(txtTongTien.Text).ToString("#,### VND", cul.NumberFormat);
@@ -349,6 +355,11 @@ namespace QLLinhKien
         {
             frmReportCTHD frm = new frmReportCTHD();
             frm.Show();
+        }
+
+        private void txtTongTien_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,16 +30,16 @@ namespace QLLinhKien
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.dtpNgayXuatHD = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboNhanVien = new System.Windows.Forms.ComboBox();
             this.cboKhachHang = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtMaLK = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -88,21 +88,11 @@ namespace QLLinhKien
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(166, 36);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Tổng Tiền :";
-            // 
             // dtpNgayXuatHD
             // 
             this.dtpNgayXuatHD.Location = new System.Drawing.Point(244, 131);
             this.dtpNgayXuatHD.Name = "dtpNgayXuatHD";
-            this.dtpNgayXuatHD.Size = new System.Drawing.Size(200, 31);
+            this.dtpNgayXuatHD.Size = new System.Drawing.Size(200, 27);
             this.dtpNgayXuatHD.TabIndex = 3;
             // 
             // label4
@@ -110,24 +100,15 @@ namespace QLLinhKien
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(239, 103);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(202, 25);
+            this.label4.Size = new System.Drawing.Size(157, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Ngày Xuất Hóa Đơn";
-            // 
-            // txtTongTien
-            // 
-            this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongTien.Location = new System.Drawing.Point(193, 42);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.ReadOnly = true;
-            this.txtTongTien.Size = new System.Drawing.Size(213, 35);
-            this.txtTongTien.TabIndex = 4;
             // 
             // txtMaHD
             // 
             this.txtMaHD.Location = new System.Drawing.Point(6, 131);
             this.txtMaHD.Name = "txtMaHD";
-            this.txtMaHD.Size = new System.Drawing.Size(199, 31);
+            this.txtMaHD.Size = new System.Drawing.Size(199, 27);
             this.txtMaHD.TabIndex = 2;
             this.txtMaHD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaHD_KeyPress);
             // 
@@ -136,7 +117,7 @@ namespace QLLinhKien
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(1, 103);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 25);
+            this.label3.Size = new System.Drawing.Size(103, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Mã Hóa Đơn";
             // 
@@ -145,7 +126,7 @@ namespace QLLinhKien
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(239, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 25);
+            this.label2.Size = new System.Drawing.Size(119, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên Nhân Viên";
             // 
@@ -154,7 +135,7 @@ namespace QLLinhKien
             this.cboNhanVien.FormattingEnabled = true;
             this.cboNhanVien.Location = new System.Drawing.Point(244, 58);
             this.cboNhanVien.Name = "cboNhanVien";
-            this.cboNhanVien.Size = new System.Drawing.Size(199, 33);
+            this.cboNhanVien.Size = new System.Drawing.Size(199, 28);
             this.cboNhanVien.TabIndex = 1;
             // 
             // cboKhachHang
@@ -162,7 +143,7 @@ namespace QLLinhKien
             this.cboKhachHang.FormattingEnabled = true;
             this.cboKhachHang.Location = new System.Drawing.Point(6, 58);
             this.cboKhachHang.Name = "cboKhachHang";
-            this.cboKhachHang.Size = new System.Drawing.Size(199, 33);
+            this.cboKhachHang.Size = new System.Drawing.Size(199, 28);
             this.cboKhachHang.TabIndex = 0;
             // 
             // label1
@@ -170,9 +151,29 @@ namespace QLLinhKien
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(1, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 25);
+            this.label1.Size = new System.Drawing.Size(134, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Khách Hàng";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(21, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(140, 29);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Tổng Tiền :";
+            // 
+            // txtTongTien
+            // 
+            this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTien.Location = new System.Drawing.Point(193, 42);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
+            this.txtTongTien.Size = new System.Drawing.Size(213, 30);
+            this.txtTongTien.TabIndex = 4;
+            this.txtTongTien.TextChanged += new System.EventHandler(this.txtTongTien_TextChanged);
             // 
             // groupBox2
             // 
@@ -201,7 +202,7 @@ namespace QLLinhKien
             this.txtMaLK.Location = new System.Drawing.Point(6, 131);
             this.txtMaLK.Name = "txtMaLK";
             this.txtMaLK.ReadOnly = true;
-            this.txtMaLK.Size = new System.Drawing.Size(227, 31);
+            this.txtMaLK.Size = new System.Drawing.Size(227, 27);
             this.txtMaLK.TabIndex = 1;
             // 
             // label10
@@ -209,7 +210,7 @@ namespace QLLinhKien
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(6, 103);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(138, 25);
+            this.label10.Size = new System.Drawing.Size(107, 20);
             this.label10.TabIndex = 7;
             this.label10.Text = "Mã Linh Kiện";
             // 
@@ -240,7 +241,7 @@ namespace QLLinhKien
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(268, 107);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 25);
+            this.label9.Size = new System.Drawing.Size(80, 20);
             this.label9.TabIndex = 5;
             this.label9.Text = "Số Lượng";
             // 
@@ -249,7 +250,7 @@ namespace QLLinhKien
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(268, 30);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 25);
+            this.label8.Size = new System.Drawing.Size(70, 20);
             this.label8.TabIndex = 4;
             this.label8.Text = "Giá Bán";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -258,7 +259,7 @@ namespace QLLinhKien
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(273, 133);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(216, 31);
+            this.txtSoLuong.Size = new System.Drawing.Size(216, 27);
             this.txtSoLuong.TabIndex = 4;
             this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
@@ -266,7 +267,7 @@ namespace QLLinhKien
             // 
             this.txtGiaBan.Location = new System.Drawing.Point(272, 58);
             this.txtGiaBan.Name = "txtGiaBan";
-            this.txtGiaBan.Size = new System.Drawing.Size(217, 31);
+            this.txtGiaBan.Size = new System.Drawing.Size(217, 27);
             this.txtGiaBan.TabIndex = 3;
             this.txtGiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaBan_KeyPress);
             // 
@@ -275,7 +276,7 @@ namespace QLLinhKien
             this.txtThanhTien.Location = new System.Drawing.Point(11, 204);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.ReadOnly = true;
-            this.txtThanhTien.Size = new System.Drawing.Size(222, 31);
+            this.txtThanhTien.Size = new System.Drawing.Size(222, 27);
             this.txtThanhTien.TabIndex = 2;
             // 
             // label7
@@ -283,7 +284,7 @@ namespace QLLinhKien
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(6, 177);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 25);
+            this.label7.Size = new System.Drawing.Size(92, 20);
             this.label7.TabIndex = 2;
             this.label7.Text = "Thành Tiền";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -293,7 +294,7 @@ namespace QLLinhKien
             this.cboLinhKien.FormattingEnabled = true;
             this.cboLinhKien.Location = new System.Drawing.Point(6, 56);
             this.cboLinhKien.Name = "cboLinhKien";
-            this.cboLinhKien.Size = new System.Drawing.Size(227, 33);
+            this.cboLinhKien.Size = new System.Drawing.Size(227, 28);
             this.cboLinhKien.TabIndex = 0;
             this.cboLinhKien.SelectedIndexChanged += new System.EventHandler(this.cboLinhKien_SelectedIndexChanged);
             // 
@@ -302,7 +303,7 @@ namespace QLLinhKien
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 27);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(145, 25);
+            this.label6.Size = new System.Drawing.Size(112, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "Tên Linh Kiện";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -329,9 +330,9 @@ namespace QLLinhKien
             this.lvSPDuocChon.FullRowSelect = true;
             this.lvSPDuocChon.GridLines = true;
             this.lvSPDuocChon.HideSelection = false;
-            this.lvSPDuocChon.Location = new System.Drawing.Point(3, 27);
+            this.lvSPDuocChon.Location = new System.Drawing.Point(3, 23);
             this.lvSPDuocChon.Name = "lvSPDuocChon";
-            this.lvSPDuocChon.Size = new System.Drawing.Size(592, 278);
+            this.lvSPDuocChon.Size = new System.Drawing.Size(592, 282);
             this.lvSPDuocChon.TabIndex = 0;
             this.lvSPDuocChon.UseCompatibleStateImageBehavior = false;
             this.lvSPDuocChon.View = System.Windows.Forms.View.Details;
@@ -424,7 +425,7 @@ namespace QLLinhKien
             // 
             // frmBanHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 790);
             this.Controls.Add(this.groupBox4);
