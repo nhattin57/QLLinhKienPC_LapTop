@@ -8,7 +8,7 @@ namespace QLLinhKien.model
     public partial class DataQLLK : DbContext
     {
         public DataQLLK()
-            : base("name=DataQLLK1")
+            : base("name=DataQLLK")
         {
         }
 

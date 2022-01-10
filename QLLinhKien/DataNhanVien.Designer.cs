@@ -1107,7 +1107,7 @@ SELECT MANV, HoTen, SDT, DiaCHi, NamSinh, GioiTinh, MaChucVu, TaiKhoan, MatKhau 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::QLLinhKien.Properties.Settings.Default.QLLinhKienPC_LaptopConnectionString1;
+            this._connection.ConnectionString = global::QLLinhKien.Properties.Settings.Default.QLLinhKienPC_LaptopConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

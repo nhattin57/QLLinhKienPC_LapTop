@@ -31,13 +31,23 @@ namespace QLLinhKien
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataKhachHang = new QLLinhKien.DataKhachHang();
             this.KHACHHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataKhachHang = new QLLinhKien.DataKhachHang();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.KHACHHANGTableAdapter = new QLLinhKien.DataKhachHangTableAdapters.KHACHHANGTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KHACHHANGBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataKhachHang)).BeginInit();
             this.SuspendLayout();
+            // 
+            // KHACHHANGBindingSource
+            // 
+            this.KHACHHANGBindingSource.DataMember = "KHACHHANG";
+            this.KHACHHANGBindingSource.DataSource = this.DataKhachHang;
+            // 
+            // DataKhachHang
+            // 
+            this.DataKhachHang.DataSetName = "DataKhachHang";
+            this.DataKhachHang.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -52,16 +62,6 @@ namespace QLLinhKien
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // DataKhachHang
-            // 
-            this.DataKhachHang.DataSetName = "DataKhachHang";
-            this.DataKhachHang.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // KHACHHANGBindingSource
-            // 
-            this.KHACHHANGBindingSource.DataMember = "KHACHHANG";
-            this.KHACHHANGBindingSource.DataSource = this.DataKhachHang;
-            // 
             // KHACHHANGTableAdapter
             // 
             this.KHACHHANGTableAdapter.ClearBeforeFill = true;
@@ -75,8 +75,8 @@ namespace QLLinhKien
             this.Name = "FrmReportKhachHang";
             this.Text = "FrmReportKhachHang";
             this.Load += new System.EventHandler(this.FrmReportKhachHang_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KHACHHANGBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataKhachHang)).EndInit();
             this.ResumeLayout(false);
 
         }

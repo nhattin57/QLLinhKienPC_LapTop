@@ -76,16 +76,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
-    <Compile Include="DataKhachHang.cs">
-      <DependentUpon>DataKhachHang.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DataKhachHang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataKhachHang.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataNhanVien.cs">
-      <DependentUpon>DataNhanVien.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataNhanVien.Designer.cs">
       <AutoGen>True</AutoGen>

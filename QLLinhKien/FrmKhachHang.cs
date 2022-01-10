@@ -181,5 +181,10 @@ namespace QLLinhKien
             FrmReportKhachHang frm = new FrmReportKhachHang();
             frm.ShowDialog();
         }
+
+        private void FrmKhachHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

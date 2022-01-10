@@ -204,8 +204,14 @@ namespace QLLinhKien
         private void lvSPDuocChon_DoubleClick(object sender, EventArgs e)
         {
             DialogResult ret = MessageBox.Show("Bạn có chắc chắn muốn xóa không", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(ret==DialogResult.Yes)
-                lvSPDuocChon.Items.Remove(lvSPDuocChon.SelectedItems[0]); 
+            if (ret == DialogResult.Yes)
+            {
+                lvSPDuocChon.Items.Remove(lvSPDuocChon.SelectedItems[0]);
+                txtTongTien.Text = tinhTongTienTrongLV().ToString();
+                CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+                string a = double.Parse(txtTongTien.Text).ToString("#,### VND", cul.NumberFormat);
+                txtTongTien.Text = a;
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -337,6 +343,10 @@ namespace QLLinhKien
                DialogResult ret= MessageBox.Show("Bạn có chắn chắn xóa ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(ret==DialogResult.Yes)
                 lvSPDuocChon.Items.Remove(lvSPDuocChon.Items[0]);
+                txtTongTien.Text = tinhTongTienTrongLV().ToString();
+                CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+                string a = double.Parse(txtTongTien.Text).ToString("#,### VND", cul.NumberFormat);
+                txtTongTien.Text = a;
             }
         }
 

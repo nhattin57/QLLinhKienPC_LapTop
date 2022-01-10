@@ -439,7 +439,7 @@
         <DataSetName>DataKhachHang</DataSetName>
         <Top>1.82167in</Top>
         <Left>2.83833in</Left>
-        <Height>1.55833in</Height>
+        <Height>1.55834in</Height>
         <Width>4.20833in</Width>
         <ZIndex>2</ZIndex>
         <Style>
@@ -496,7 +496,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataKhachHang</rd:DataSetName>
-        <rd:SchemaPath>E:\Desktop\New folder\QLLinhKienPC_LapTop\QLLinhKien\DataKhachHang.xsd</rd:SchemaPath>
+        <rd:SchemaPath>E:\project_QLLK\git-fixNVKH\QLLinhKienPC_LapTop\QLLinhKien\DataKhachHang.xsd</rd:SchemaPath>
         <rd:TableName>KHACHHANG</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
