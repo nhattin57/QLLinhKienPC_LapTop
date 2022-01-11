@@ -21,7 +21,7 @@ namespace QLLinhKien
         {
             // TODO: This line of code loads data into the 'DataSetCTHD.TIMCTHDTheoMaHD' table. You can move, or remove it, as needed.
             this.TIMCTHDTheoMaHDTableAdapter.Fill(this.DataSetCTHD.TIMCTHDTheoMaHD,maHD);
-
+           
             this.reportViewer1.RefreshReport();
         }
     }

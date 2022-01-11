@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Globalization;
 namespace QLLinhKien
 {
     public partial class frmThongKe : Form
@@ -57,6 +57,9 @@ namespace QLLinhKien
             HienThiListViewHomNay();
             long totalDoanhThuHomNay = TongDoanhThuHomNay();
             txtTongDoanhThu.Text = totalDoanhThuHomNay.ToString();
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+            string a = double.Parse(txtTongDoanhThu.Text).ToString("#,### VND", cul.NumberFormat);
+            txtTongDoanhThu.Text = a;
         }
 
         void HienThiListViewTungayDenNgay()
@@ -98,6 +101,9 @@ namespace QLLinhKien
             HienThiListViewTungayDenNgay();
             long totalDoanhThu = TongDoanhThuTungayDenNgay();
             txtTongDoanhThu.Text = totalDoanhThu.ToString();
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+            string a = double.Parse(txtTongDoanhThu.Text).ToString("#,### VND", cul.NumberFormat);
+            txtTongDoanhThu.Text = a;
         }
 
         private void btnExcel_Click(object sender, EventArgs e)

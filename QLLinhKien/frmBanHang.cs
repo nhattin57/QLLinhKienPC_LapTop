@@ -120,7 +120,7 @@ namespace QLLinhKien
         private void btnThem_Click(object sender, EventArgs e)
         {
            
-            if (txtSoLuong.Text == "" || txtGiaBan.Text == "" || cboLinhKien.Text == "")
+            if (txtSoLuong.Text == "" || txtGiaBan.Text == "" || cboLinhKien.Text == ""||txtSoLuong.Text=="0")
             {
                 MessageBox.Show("Vui Lòng Nhập đủ thông tin", "Thông Báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
