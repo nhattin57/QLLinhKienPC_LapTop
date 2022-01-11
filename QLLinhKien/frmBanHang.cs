@@ -21,6 +21,8 @@ namespace QLLinhKien
         public int SL_LK;
         public string maLKTrungTrongListView;
         public static string maHDToReport = "";
+        public static string tenKHToReport = "";
+        public static string tenNVToReport = "";
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -328,6 +330,8 @@ namespace QLLinhKien
                     lk.upDateSLLinhKien(soluong, maLK);
                 }
                 maHDToReport = maHD;
+                tenNVToReport = cboNhanVien.Text;
+                tenKHToReport = cboKhachHang.Text;
                 lvSPDuocChon.Items.Clear();
                 txtMaHD.Text = "";
                 txtSoLuong.Text = "";
