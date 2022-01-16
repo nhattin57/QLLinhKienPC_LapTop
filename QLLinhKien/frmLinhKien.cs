@@ -96,12 +96,13 @@ namespace QLLinhKien
         {
 
         }
-
+        
         private void btnThem_Click(object sender, EventArgs e)
         {
             closeTextBoxCBB(false);
             themmoi = true;
             setNut(false);
+            huyNDtextbox();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
